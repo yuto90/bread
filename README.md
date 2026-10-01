@@ -1,5 +1,15 @@
 # bread-poc
 
+## Local Playground
+
+Run `npm run playground` with Node.js 24+ and open **http://127.0.0.1:4173**.
+Edit connection-only Bread code, try one/three/six-LED and mixed-parts samples,
+inspect errors and warnings, zoom/fit the diagram, and download the current SVG.
+Everything compiles in your browser using the same checked core as the CLI.
+No application backend, account, AI service or runtime dependencies are required.
+See [setup, scope and verification limits](docs/playground.md).
+
+
 Local preview extension: the user-requested [three-LED example](examples/three-leds.bread)
 adds exactly three resistor/LED branches on D13/D12/D11 with one shared ground.
 See [scope and verification](docs/three-led-preview.md). The original one-LED
@@ -63,7 +73,7 @@ Uno positions come from the official CAD; see [hardware sources](docs/hardware-s
 - `check` runs the complete validation and placement pipeline. `render` runs
   the same checks and writes only after they pass. Failure exits with status 1,
   prints a stable code and preserves any existing output (which may then be stale).
-- No simulation, firmware, AI service, web playground, Markdown plugin, manual
+- No simulation, firmware, AI service, Markdown plugin, manual
   layout, PNG export, or general-purpose circuit solver is included. PNG files
   in `output/` are browser screenshots used for review, not another CLI format.
 
@@ -95,8 +105,9 @@ npm test
 ./bin/bread render examples/blink-reversed.bread -o output/blink-reversed.svg
 ```
 
-Only TypeScript and Node types are development dependencies; `npm ci` is not
-needed to run the CLI or tests. Open generated SVG files in a browser.
+TypeScript, Node types and jsdom are development dependencies; `npm ci` is not
+needed to run the CLI or Playground. It is needed for typechecking and the full
+test suite, including DOM tests. Open generated SVG files in a browser.
 
 Read the [acceptance evidence and feasibility decision](docs/feasibility.md),
 [existing-tool comparison](docs/comparison.md), and [hardware/asset provenance](docs/hardware-sources.md).
