@@ -20,6 +20,7 @@ headers, and inspected signal contact references. Archive SHA-256:
 | --- | --- | --- | ---: | ---: | --- |
 | D13 | IOH / 6 | SCK | 28.956 | 50.800 | 272.692, 247.780 |
 | D12 | IOH / 5 | MISO | 31.496 | 50.800 | 290.472, 247.780 |
+| D11 (three-LED extension) | IOH / 4 | MOSI | 34.036 | 50.800 | 308.252, 247.780 |
 | GND1 (alias GND) | IOH / 7 | GND | 26.416 | 50.800 | 254.912, 247.780 |
 
 The pinout confirms D13 = PB5/SCK and D12 = PB4/CIPO (formerly MISO).

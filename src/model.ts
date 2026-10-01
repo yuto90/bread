@@ -16,9 +16,15 @@ export type Point = { x: number; y: number };
 export type Placement = {
   leads: Record<string, string>;
   jumpers: { pin: string; hole: string }[];
+  links?: { fromHole: string; toHole: string }[];
 };
-export type Resolved = Circuit & {
-  uno: string; resistor: string; led: string; signal: string;
+export type Branch = {
+  resistor: string; led: string; signal: string;
   resistorInput: string; resistorOutput: string; ledInput: string; ledGround: string;
+};
+export type Resolved = Circuit & Branch & {
+  uno: string;
+  branches?: Branch[];
   warnings: string[];
 };
+export const branchesOf = (c: Resolved): Branch[] => c.branches ?? [c];

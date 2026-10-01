@@ -22,7 +22,7 @@ try {
       const temp = `${output}.${process.pid}.tmp`;
       try { writeFileSync(temp, svg, { flag: 'wx' }); renameSync(temp, output); }
       finally { rmSync(temp, { force: true }); }
-      console.log(`PASS ${output}: ${result.actual.length} verified nets, ${result.placement.jumpers.length} jumpers`);
+      console.log(`PASS ${output}: ${result.actual.length} verified nets, ${result.placement.jumpers.length+(result.placement.links?.length??0)} jumpers`);
     } else console.log(`PASS ${input}: syntax, logical nets, placement and physical nets verified`);
   }
 } catch (error) {

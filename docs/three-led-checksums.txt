@@ -1,0 +1,2 @@
+1a7c533c50696147486ecc0c21b6ef4a0bb9c7e7006d52c1142343c206fd0823  output/three-leds.svg
+2e1e5ea2430ae5e1a7bdae8219bb6f8fb6d5c5c97980c1eaad65e261dba99767  output/three-leds-preview.png

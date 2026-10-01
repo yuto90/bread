@@ -1,5 +1,11 @@
 # bread-poc
 
+Local preview extension: the user-requested [three-LED example](examples/three-leds.bread)
+adds exactly three resistor/LED branches on D13/D12/D11 with one shared ground.
+See [scope and verification](docs/three-led-preview.md). The original one-LED
+PoC below remains supported and its output is preserved. This extension does
+not claim general-purpose routing.
+
 Connection-only `.bread` → automatically placed, electrically checked breadboard
 wiring → standalone SVG. This PoC supports one Arduino Uno R3, one 220Ω resistor,
 one 5mm red LED, and a system-added breadboard with two jumpers.
