@@ -1,3 +1,4 @@
+import {physicalMixed} from '../mixed/verify.ts';
 import { branchesOf, fail } from '../model.ts';
 import type { Netlist, Placement, Resolved } from '../model.ts';
 import { holes, holeGroup, holePoint } from '../breadboard/index.ts';
@@ -7,6 +8,7 @@ import { unoPins } from '../../parts/arduino-uno-r3/index.ts';
 // Independent reconstruction: no expected net IDs or inferred connection edges
 // enter this function. Only conductor groups, lead insertion, and jumper ends.
 export function physicalNetlist(circuit: Resolved, physical: Placement): Netlist {
+  if(circuit.mixed) return physicalMixed(circuit,physical);
   const occupied = new Set<string>(), uf = new UnionFind();
   for (const hole of holes) uf.union(`hole:${hole}`, `strip:${holeGroup(hole)}`);
   const occupy = (hole: string) => {

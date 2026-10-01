@@ -1,9 +1,12 @@
+import {isMixed} from './mixed/parts.ts';
+import {resolveMixed} from './mixed/semantic.ts';
 import { fail } from './model.ts';
 import type { Branch, Circuit, Resolved } from './model.ts';
 import { canonicalPin, unoPins } from '../parts/arduino-uno-r3/index.ts';
 import { logicalNetlist } from './netlist/index.ts';
 
 export function resolve(ast: Circuit): Resolved {
+  if(isMixed(ast)) return resolveMixed(ast);
   const parts = new Map<string, string>();
   const pins: Record<string, string[]> = {
     'arduino-uno-r3': Object.keys(unoPins), resistor: ['1', '2'], 'led-5mm-red': ['A', 'K']

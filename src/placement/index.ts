@@ -1,9 +1,11 @@
+import {placeMixed} from '../mixed/placement.ts';
 import type { Placement, Resolved } from '../model.ts';
 import { branchesOf, fail } from '../model.ts';
 import { resistor } from '../../parts/resistor/index.ts';
 import { led } from '../../parts/led-5mm-red/index.ts';
 
 export function place(circuit: Resolved): Placement {
+  if(circuit.mixed) return placeMixed(circuit);
   const branches = branchesOf(circuit);
   if (branches.length > 6) fail('E_PLACEMENT_CAPACITY', `${branches.length} branches exceed the 6-branch capacity of the supported footprint on the fixed 30-row, two-bank breadboard`);
   if (branches.length >= 3) {

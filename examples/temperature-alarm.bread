@@ -1,0 +1,27 @@
+bread 0.1
+title "Temperature alarm · wiring study"
+part uno: arduino-uno-r3
+part acknowledge: pushbutton-b3f1000-formed
+part threshold: potentiometer-3296w [value=10kohm]
+part temperature: dht22-bare
+part alarm: led-5mm-red
+part limit: resistor [value=220ohm]
+part pullup: resistor [value=10kohm]
+part pulldown: resistor [value=10kohm]
+// Intended roles only; this file does not implement alarm firmware.
+uno.5V -- threshold.1
+uno.5V -- temperature.1
+uno.5V -- pullup.1
+uno.5V -- acknowledge.A1
+uno.GND -- threshold.3
+uno.GND -- temperature.4
+uno.GND -- alarm.K
+uno.GND -- pulldown.2
+uno.A0 -- threshold.2
+uno.D2 -- temperature.2
+temperature.2 -- pullup.2
+uno.D4 -- acknowledge.B1
+acknowledge.B1 -- pulldown.1
+uno.D13 -- limit.1
+limit.2 -- alarm.A
+// temperature.3 is physically present but deliberately unconnected.

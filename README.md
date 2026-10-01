@@ -117,3 +117,15 @@ claim of clean arbitrary-size routing. Seven and above fail with
 ./bin/bread check examples/10-leds.bread # expected capacity error
 node scripts/measure-scaling.ts
 ```
+
+## Mixed-parts wiring study
+
+[Temperature-alarm wiring preview](docs/mixed-parts-preview.md) adds a four-leg
+pushbutton, 10kΩ Bourns trimmer and bare four-pin DHT22 alongside the LED and
+three resistors. It verifies eight static nets on the existing 300-hole board.
+Button lead forming and sensor case/clearance remain explicit mechanical
+qualifications; this is not a working alarm or a hardware-tested assembly.
+
+```sh
+./bin/bread render examples/temperature-alarm.bread -o output/temperature-alarm.svg
+```

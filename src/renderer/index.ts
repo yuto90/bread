@@ -1,3 +1,4 @@
+import {renderMixed} from '../mixed/renderer.ts';
 import type { Placement, Resolved } from '../model.ts';
 import { branchesOf } from '../model.ts';
 import { breadboard as b } from '../../parts/breadboard/index.ts';
@@ -18,6 +19,7 @@ export function renderSvg(c: Resolved, p: Placement): string {
   // Public renderer rechecks even if called without compile(). No unchecked
   // placement can be rendered by this API.
   const expected = logicalNetlist(c), actual = verify(c, expected, p);
+  if(c.mixed) return renderMixed(c,p,actual);
   const branches = branchesOf(c), multi = branches.length >= 3, large = branches.length > 3;
   const wires = [...route(p),...routeLinks(p)], signal = branches.map(b=>b.signal.split('.')[1]).join('/');
   const outline = [[0,53.34],[64.516,53.34],[66.04,51.816],[66.04,40.386],[68.58,37.846],[68.58,5.08],[66.04,2.54],[66.04,0],[0,0]].map(([x,y],i)=>{

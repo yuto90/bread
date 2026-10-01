@@ -1,0 +1,204 @@
+{
+  "expected": [
+    [
+      "acknowledge.A1",
+      "acknowledge.A2",
+      "pullup.1",
+      "temperature.1",
+      "threshold.1",
+      "uno.5V"
+    ],
+    [
+      "acknowledge.B1",
+      "acknowledge.B2",
+      "pulldown.1",
+      "uno.D4"
+    ],
+    [
+      "alarm.A",
+      "limit.2"
+    ],
+    [
+      "alarm.K",
+      "pulldown.2",
+      "temperature.4",
+      "threshold.3",
+      "uno.GND1"
+    ],
+    [
+      "limit.1",
+      "uno.D13"
+    ],
+    [
+      "pullup.2",
+      "temperature.2",
+      "uno.D2"
+    ],
+    [
+      "temperature.3"
+    ],
+    [
+      "threshold.2",
+      "uno.A0"
+    ]
+  ],
+  "actual": [
+    [
+      "acknowledge.A1",
+      "acknowledge.A2",
+      "pullup.1",
+      "temperature.1",
+      "threshold.1",
+      "uno.5V"
+    ],
+    [
+      "acknowledge.B1",
+      "acknowledge.B2",
+      "pulldown.1",
+      "uno.D4"
+    ],
+    [
+      "alarm.A",
+      "limit.2"
+    ],
+    [
+      "alarm.K",
+      "pulldown.2",
+      "temperature.4",
+      "threshold.3",
+      "uno.GND1"
+    ],
+    [
+      "limit.1",
+      "uno.D13"
+    ],
+    [
+      "pullup.2",
+      "temperature.2",
+      "uno.D2"
+    ],
+    [
+      "temperature.3"
+    ],
+    [
+      "threshold.2",
+      "uno.A0"
+    ]
+  ],
+  "placement": {
+    "leads": {
+      "temperature.1": "E3",
+      "temperature.2": "E4",
+      "temperature.3": "E5",
+      "temperature.4": "E6",
+      "alarm.A": "H2",
+      "alarm.K": "H3",
+      "acknowledge.A1": "E11",
+      "acknowledge.A2": "F11",
+      "acknowledge.B1": "E13",
+      "acknowledge.B2": "F13",
+      "threshold.1": "C14",
+      "threshold.2": "C15",
+      "threshold.3": "C16",
+      "limit.1": "J4",
+      "limit.2": "J8",
+      "pulldown.1": "J10",
+      "pulldown.2": "J14",
+      "pullup.1": "E14",
+      "pullup.2": "E18"
+    },
+    "jumpers": [
+      {
+        "pin": "uno.5V",
+        "hole": "A3"
+      },
+      {
+        "pin": "uno.D4",
+        "hole": "F10"
+      },
+      {
+        "pin": "uno.GND1",
+        "hole": "G3"
+      },
+      {
+        "pin": "uno.D13",
+        "hole": "F4"
+      },
+      {
+        "pin": "uno.D2",
+        "hole": "B4"
+      },
+      {
+        "pin": "uno.A0",
+        "hole": "A15"
+      }
+    ],
+    "links": [
+      {
+        "fromHole": "A11",
+        "toHole": "A14"
+      },
+      {
+        "fromHole": "B3",
+        "toHole": "B11"
+      },
+      {
+        "fromHole": "G10",
+        "toHole": "G13"
+      },
+      {
+        "fromHole": "F2",
+        "toHole": "F8"
+      },
+      {
+        "fromHole": "F14",
+        "toHole": "E16"
+      },
+      {
+        "fromHole": "F3",
+        "toHole": "D6"
+      },
+      {
+        "fromHole": "A6",
+        "toHole": "A16"
+      },
+      {
+        "fromHole": "A4",
+        "toHole": "A18"
+      }
+    ]
+  },
+  "crossingPoints": 27,
+  "crossings": [
+    "0:1:579:326",
+    "0:3:588:326",
+    "0:4:597:326",
+    "0:5:425.6:740",
+    "0:11:700:326",
+    "1:2:443.38:184",
+    "1:2:579:310",
+    "1:3:443.38:201",
+    "1:3:579:201",
+    "1:4:579:218",
+    "1:12:691:478",
+    "1:13:682:478",
+    "2:3:570:201",
+    "2:3:588:310",
+    "2:4:570:218",
+    "2:4:597:310",
+    "2:11:958:310",
+    "2:11:700:310",
+    "3:4:588:218",
+    "3:4:814:334",
+    "3:11:700:334",
+    "4:11:700:330",
+    "5:12:691:614",
+    "5:13:682:614",
+    "7:8:1160:494",
+    "7:9:1160:430",
+    "11:13:700:350"
+  ],
+  "warnings": [
+    "W_BUTTON_FOOTPRINT: B3F-1000 leads assumed formed to 7.62 × 5.08mm; mechanical fit untested."
+  ]
+}

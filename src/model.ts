@@ -24,6 +24,7 @@ export type Branch = {
 };
 export type Resolved = Circuit & Branch & {
   uno: string;
+  mixed?: boolean;
   branches?: Branch[];
   warnings: string[];
 };

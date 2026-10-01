@@ -1,3 +1,4 @@
+import {isMixed,mixedPins,fixedPairs} from '../mixed/parts.ts';
 import type { Circuit, Netlist } from '../model.ts';
 
 export class UnionFind {
@@ -19,11 +20,12 @@ export class UnionFind {
   }
 }
 export function terminals(circuit: Circuit): string[] {
-  return [...new Set(circuit.connections.flatMap(c => [c.from, c.to]))].sort();
+  return [...new Set([...circuit.connections.flatMap(c => [c.from, c.to]),...(isMixed(circuit)?circuit.parts.flatMap(p=>(mixedPins[p.type]??[]).map(pin=>`${p.id}.${pin}`)):[])])].sort();
 }
 export function logicalNetlist(circuit: Circuit): Netlist {
   const uf = new UnionFind();
   for (const c of circuit.connections) uf.union(c.from, c.to);
+  for (const p of circuit.parts) for(const [a,b] of fixedPairs(p)) uf.union(`${p.id}.${a}`,`${p.id}.${b}`);
   // Never union through a resistor or LED body.
   return uf.groups(terminals(circuit));
 }
