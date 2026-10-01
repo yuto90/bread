@@ -1,0 +1,11 @@
+bread 0.1
+
+title "Arduino LED"
+
+part uno: arduino-uno-r3
+part r1: resistor [value=220ohm]
+part led: led-5mm-red
+
+uno.D13 -- r1.1
+r1.2 -- led.A
+led.K -- uno.GND

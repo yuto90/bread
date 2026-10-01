@@ -1,0 +1,58 @@
+
+> bread-poc@0.1.0 test
+> node --test tests/*.test.ts
+
+✔ CLI check/render, process determinism, failure status and atomic output (818.265214ms)
+✔ AC01–07: connection-only canonical circuit has exact independent physical nets (6.534527ms)
+✔ Net builder never joins through component internals (0.154699ms)
+✔ D12 pin change moves wire by one physical socket without changing ground (1.72718ms)
+✔ Official header order and stable GND alias (2.36392ms)
+✔ Explicitly reversed LED preserved, warned, and verified (1.475038ms)
+✔ Resistor terminal reversal and changed IDs follow connectivity (0.419279ms)
+✔ unknown component type (0.329237ms)
+✔ unknown referenced component (0.122371ms)
+✔ unknown pin (0.285943ms)
+✔ duplicate ID (0.269979ms)
+✔ wrong resistor value (0.144293ms)
+✔ attribute on board (0.091254ms)
+✔ missing version (0.056374ms)
+✔ wrong version (0.053449ms)
+✔ arrow syntax (0.057204ms)
+✔ unknown attribute (0.050214ms)
+✔ duplicate connection (0.078205ms)
+✔ component short (0.071937ms)
+✔ unsupported but real pin (0.066859ms)
+✔ missing part (0.050375ms)
+✔ disconnected circuit (0.056654ms)
+✔ Reject manual layout: x = 100 (0.088811ms)
+✔ Reject manual layout: y = 200 (0.06746ms)
+✔ Reject manual layout: rotation = 90 (0.111896ms)
+✔ Reject manual layout: @E12 (0.046839ms)
+✔ Reject manual layout: wire bend 100,200 (0.043074ms)
+✔ Reject manual layout: place led right-of resistor (0.040339ms)
+✔ Reject manual layout: layout LR (0.039428ms)
+✔ Comments, CRLF, BOM, strings and escaped XML are handled safely (3.886066ms)
+✔ Every strip has five holes, all 60 strips isolated, gap not connected (0.454862ms)
+✔ Fault injection: occupied hole blocks SVG (0.748054ms)
+✔ Fault injection: invalid hole blocks SVG (0.607427ms)
+✔ Fault injection: shorted resistor blocks SVG (0.91452ms)
+✔ Fault injection: shorted LED blocks SVG (0.48056ms)
+✔ Fault injection: overlapping component bodies blocks SVG (0.97578ms)
+✔ Fault injection: missing lead blocks SVG (0.539356ms)
+✔ Fault injection: wrong lead span blocks SVG (0.46781ms)
+✔ Fault injection: unknown socket blocks SVG (0.674656ms)
+✔ Fault injection: wrong existing socket blocks SVG (0.908321ms)
+✔ Fault injection: wrong ground socket blocks SVG (0.557333ms)
+✔ Fault injection: wrong strip blocks SVG (0.495882ms)
+✔ Fault injection: wrong side of gap blocks SVG (0.743417ms)
+✔ Reconstruction reflects changed physical placement independently (0.436144ms)
+✔ AC10: SVG byte-identical across repeated renders and statement order (20.411042ms)
+✔ Both supported signal routes have exact endpoints and no wire crossings (0.794192ms)
+ℹ tests 46
+ℹ suites 0
+ℹ pass 46
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 907.437426
