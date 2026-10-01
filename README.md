@@ -102,3 +102,18 @@ Read the [acceptance evidence and feasibility decision](docs/feasibility.md),
 [existing-tool comparison](docs/comparison.md), and [hardware/asset provenance](docs/hardware-sources.md).
 The technical result is **conditional Go**. Beginner comprehension (AC-09) and
 AI generation success rates still require user studies; tests alone cannot prove them.
+
+## Scaling study
+
+A further bounded extension packs 4–6 shared-ground branches across both banks of
+that same 300-hole board. [Six-LED preview and measured limits](docs/scaling-preview.md)
+compare it with the original three branches and a rejected ten-branch request.
+Six has 17 wire crossings despite valid physical connectivity; this is not a
+claim of clean arbitrary-size routing. Seven and above fail with
+`E_PLACEMENT_CAPACITY` for the supported footprint.
+
+```sh
+./bin/bread render examples/6-leds.bread -o output/6-leds.svg
+./bin/bread check examples/10-leds.bread # expected capacity error
+node scripts/measure-scaling.ts
+```

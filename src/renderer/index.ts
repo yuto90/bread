@@ -18,7 +18,7 @@ export function renderSvg(c: Resolved, p: Placement): string {
   // Public renderer rechecks even if called without compile(). No unchecked
   // placement can be rendered by this API.
   const expected = logicalNetlist(c), actual = verify(c, expected, p);
-  const branches = branchesOf(c), multi = branches.length === 3;
+  const branches = branchesOf(c), multi = branches.length >= 3, large = branches.length > 3;
   const wires = [...route(p),...routeLinks(p)], signal = branches.map(b=>b.signal.split('.')[1]).join('/');
   const outline = [[0,53.34],[64.516,53.34],[66.04,51.816],[66.04,40.386],[68.58,37.846],[68.58,5.08],[66.04,2.54],[66.04,0],[0,0]].map(([x,y],i)=>{
     const pt=fromCad(x,y); return `${i?'L':'M'} ${pt.x} ${pt.y}`;
@@ -49,6 +49,13 @@ export function renderSvg(c: Resolved, p: Placement): string {
     text(302,368,'UNO R3',34,'white','font-weight="700"'),
     text(302,393,'TOP VIEW · USB LEFT',12,'#c5eeee')
   ];
+  if (large) {
+    out[0] = out[0].replaceAll('1440','1580').replaceAll('940','1140');
+    const bg = out.indexOf('<rect width="1440" height="940" fill="#f5f7f6"/>');
+    out[bg] = '<rect width="1580" height="1140" fill="#f5f7f6"/>';
+    const subtitle = out.findIndex(x=>x.includes('3 × 220Ω'));
+    out[subtitle] = text(50,115,`Uno R3 · ${branches.length} × 220Ω + LED · fixed 300-hole breadboard · crossings are insulated wires`,16);
+  }
   for (const [x,y] of [[86,283],[514,279],[516,540],[94,579]]) out.push(`<circle cx="${x}" cy="${y}" r="10" fill="#d7e1d8"/><circle cx="${x}" cy="${y}" r="6" fill="#f5f7f6"/>`);
   for (const pin of [...upperHeader,...lowerHeader]) {
     const pt = unoPins[pin], top = upperHeader.includes(pin), active = branches.some(b=>b.signal.split('.')[1]===pin) || pin === 'GND1';
@@ -78,7 +85,7 @@ export function renderSvg(c: Resolved, p: Placement): string {
     const path = wire.points.map((pt,i)=>`${i?'L':'M'} ${pt.x} ${pt.y}`).join(' ');
     out.push(`<g data-wire-pin="${esc(wire.pin)}" data-wire-hole="${wire.hole}"><path d="${path}" fill="none" stroke="#f5f7f6" stroke-width="9" stroke-linejoin="round"/><path d="${path}" fill="none" stroke="${wire.color}" stroke-width="5" stroke-linejoin="round"/><title>${esc(wire.pin)} to ${wire.hole}</title></g>`);
     for (const pt of [wire.points[0], wire.points.at(-1)!]) out.push(ring(pt.x,pt.y,wire.color));
-    if (!wire.pin.startsWith('breadboard.')) out.push(text(multi && wire.pin.endsWith('.GND1') ? 70 : wire.points[0].x+7,wire.points[1].y-9,`${wire.pin} → ${wire.hole}`,14,wire.color,'font-weight="700"'));
+    if (!large && !wire.pin.startsWith('breadboard.')) out.push(text(multi && wire.pin.endsWith('.GND1') ? 70 : wire.points[0].x+7,wire.points[1].y-9,`${wire.pin} → ${wire.hole}`,14,wire.color,'font-weight="700"'));
   }
   for (const branch of branches) {
   const r1 = holePoint(p.leads[branch.resistorInput]), r2 = holePoint(p.leads[branch.resistorOutput]);
@@ -87,8 +94,9 @@ export function renderSvg(c: Resolved, p: Placement): string {
     `<rect x="${r1.x-8}" y="${ry-20}" width="16" height="40" rx="6" fill="url(#resistor)" stroke="#957340"/>`);
   for (const [dy,color] of [[-12,'#bf3030'],[-5,'#bf3030'],[3,'#84552a'],[13,'#c79c39']] as const)
     out.push(`<rect x="${r1.x-8}" y="${ry+dy}" width="16" height="3" fill="${color}"/>`);
-  out.push(`<rect x="${r1.x+33}" y="${ry-12}" width="45" height="22" rx="4" fill="#fbfbf6"/>`,text(r1.x+37,ry+5,'220Ω',14,'#584227','font-weight="700"'));
+  if (!large) out.push(`<rect x="${r1.x+33}" y="${ry-12}" width="45" height="22" rx="4" fill="#fbfbf6"/>`,text(r1.x+37,ry+5,'220Ω',14,'#584227','font-weight="700"'));
   const ledPins = ['A','K'].map(pin => ({pin, hole:p.leads[`${branch.led}.${pin}`], ...holePoint(p.leads[`${branch.led}.${pin}`])}));
+  const labelStart=out.length;
   const lx = ledPins[0].x, ly = Math.max(...ledPins.map(pt=>pt.y))+48;
   const leadOffset = multi ? 7 : 10;
   const upper = ledPins.reduce((a,pt)=>pt.y<a.y?pt:a), lower = ledPins.find(pt=>pt!==upper)!;
@@ -100,12 +108,32 @@ export function renderSvg(c: Resolved, p: Placement): string {
     text(multi?lx+88:lx-28,multi?ly+12:ly+48,`${branch.led} · RED`,13,'#9e2836','font-weight="700"'),
     text(lx-23,ly-22,upper.pin,12,'#9e2836','font-weight="700"'),
     text(lx+16,ly-22,lower.pin,12,'#9e2836','font-weight="700"'));
+  if (large) {
+    const labelX = lx+85;
+    for(let i=out.length-1;i>=labelStart;i--) if(out[i].startsWith(`<rect x="${labelX}"`) || out[i].includes(`${esc(branch.led)} · RED`)) out.splice(i,1);
+    out.push(text(lx,ly+12,String(branches.indexOf(branch)+1),13,'white','text-anchor="middle" font-weight="700"'));
+  }
   }
   for (const [pin,hole] of Object.entries(p.leads)) {
     const pt = holePoint(hole);
     out.push(ring(pt.x,pt.y,branches.some(b=>pin.startsWith(`${b.led}.`))?'#c4464e':'#947640',`data-lead="${esc(pin)}" data-hole="${hole}"`));
   }
-  if (multi) {
+  if (large) {
+    out.push('<rect x="1110" y="200" width="425" height="815" rx="12" fill="white" stroke="#d7dfdb"/>',text(1134,235,`${branches.length} BRANCHES / ONE GROUND`,16,'#517366','font-weight="700"'));
+    branches.forEach((branch,i)=>{
+      const y=270+i*87;
+      out.push(text(1134,y,`${i+1}. ${branch.signal} → ${branch.resistor} → ${branch.led}`,17,'#173b35','font-weight="700"'),
+        text(1134,y+23,`Signal → ${p.jumpers[i].hole} · 220Ω: ${p.leads[`${branch.resistor}.1`]} / ${p.leads[`${branch.resistor}.2`]}`,14),
+        text(1134,y+45,`LED A → ${p.leads[`${branch.led}.A`]} / K → ${p.leads[`${branch.led}.K`]}`,14,'#a12e39'));
+    });
+    out.push(text(1134,817,`${c.uno}.GND1 → A25 (one wire)`,16,'#173b35','font-weight="700"'));
+    (p.links??[]).forEach((l,i)=>out.push(text(1134,845+i*24,`${l.fromHole} → ${l.toHole}`,14)));
+    out.push(text(70,825,'Routing stress preview',24,'#173b35','font-weight="700"'),
+      text(70,858,'Same physical board: 30 rows, two isolated five-hole banks.',16),
+      text(70,886,'Wire crossings have no electrical junction. Follow the labeled endpoints.',16),
+      text(70,914,'LED numbers match the insertion guide; every resistor is 220Ω.',16),
+      text(70,942,'This pattern fits at most six branches. Ten is rejected before rendering.',16));
+  } else if (multi) {
     out.push('<rect x="1040" y="200" width="350" height="590" rx="12" fill="white" stroke="#d7dfdb"/>',
       text(1064,235,'THREE BRANCHES / ONE GROUND',13,'#517366','font-weight="700"'));
     branches.forEach((branch,i)=>{
@@ -147,5 +175,12 @@ export function renderSvg(c: Resolved, p: Placement): string {
     text(70,881,c.warnings.length ? c.warnings[0] : 'Polarity preserved · no manual coordinates or hole addresses in the input · standalone SVG',14,c.warnings.length?'#a12e39':'#50665c'),
     text(50,927,'Board geometry: Arduino UNO R3 (A000066), adapted. Illustrations: CC BY-SA 4.0 · Bread PoC 0.1',11,'#657873'),
     '</g></svg>');
+  if (large) {
+    const footer=out.findIndex(x=>x.startsWith('<rect x="50" y="827"'));
+    out[footer]='<rect x="50" y="1040" width="1485" height="70" rx="10" fill="#e9eeeb"/>';
+    out[footer+1]=text(70,1067,`${actual.length} verified nets · ${branches.length*2} jumper wires · ${branches.length*2+1} components + one breadboard`,16,'#294b40','font-weight="700"');
+    out[footer+2]=text(70,1093,c.warnings.join(' ') || 'Connection-only input · deterministic placement · physical netlist independently verified',14);
+    out[footer+3]=out[footer+3].replace('y="927"','y="1130"');
+  }
   return out.join('\n')+'\n';
 }

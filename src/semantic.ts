@@ -26,7 +26,7 @@ export function resolve(ast: Circuit): Resolved {
   const circuit: Circuit = { ...ast, connections: ast.connections.map(c => ({
     ...c, from: endpoint(c.from, c.line), to: endpoint(c.to, c.line)
   })) };
-  if (ast.parts.length !== 3) return resolveThree(circuit);
+  if (ast.parts.length !== 3) return resolveBranches(circuit);
   for (const type of Object.keys(pins)) {
     if (ast.parts.filter(p => p.type === type).length !== 1)
       fail('E_UNSUPPORTED_CIRCUIT', 'Requires exactly one Uno R3, one 220ohm resistor, and one red LED');
@@ -56,20 +56,21 @@ export function resolve(ast: Circuit): Resolved {
 }
 
 // Explicit bounded extension requested after the original one-LED PoC review.
-// No general graph-layout promise: exactly three series branches, one ground.
-function resolveThree(c: Circuit): Resolved {
+// Shared-ground series family; physical capacity is checked by placement.
+function resolveBranches(c: Circuit): Resolved {
   const ids = (type: string) => c.parts.filter(p => p.type === type).map(p => p.id);
   const boards = ids('arduino-uno-r3'), resistors = ids('resistor'), leds = ids('led-5mm-red');
-  if (boards.length !== 1 || resistors.length !== 3 || leds.length !== 3)
-    fail('E_UNSUPPORTED_CIRCUIT', 'Supported families: one LED, or exactly three resistor/LED branches on one Uno');
+  const count = resistors.length;
+  if (boards.length !== 1 || count < 3 || count > 12 || leds.length !== count)
+    fail('E_UNSUPPORTED_CIRCUIT', 'Supported families: one LED, or 3–12 resistor/LED branches on one Uno (placement capacity applies)');
   const uno = boards[0], nets = logicalNetlist(c);
   if (nets.some(n => [...resistors,...leds].some(id => n.filter(t => t.startsWith(`${id}.`)).length > 1)))
     fail('E_COMPONENT_SHORT', 'A resistor or LED has both terminals on one net');
   const ground = nets.find(n => n.includes(`${uno}.GND1`));
-  if (c.connections.length !== 9 || nets.length !== 7 || !ground || ground.length !== 4 || nets.filter(n=>n.length===2).length !== 6)
-    fail('E_UNSUPPORTED_CIRCUIT', 'Three branches require six two-terminal nets and one four-terminal shared ground');
+  if (c.connections.length !== count*3 || nets.length !== count*2+1 || !ground || ground.length !== count+1 || nets.filter(n=>n.length===2).length !== count*2)
+    fail('E_UNSUPPORTED_CIRCUIT', 'Each branch requires two two-terminal nets and one shared-ground return');
   const branches: Branch[] = [];
-  for (const pin of ['D13','D12','D11']) {
+  for (const pin of Array.from({length:count},(_,i)=>`D${13-i}`)) {
     const signal = `${uno}.${pin}`, signalNet = nets.find(n=>n.includes(signal));
     const resistorInput = signalNet?.find(t=>resistors.includes(t.split('.')[0]));
     if (!resistorInput || signalNet!.length !== 2) fail('E_UNSUPPORTED_CIRCUIT', `Expected ${signal} connected to its own resistor`);
@@ -79,10 +80,10 @@ function resolveThree(c: Circuit): Resolved {
     const ledInput = middle?.find(t=>leds.includes(t.split('.')[0]));
     if (!ledInput || middle!.length !== 2) fail('E_UNSUPPORTED_CIRCUIT', 'Each resistor must connect to its own LED');
     const led = ledInput.split('.')[0], ledGround = `${led}.${ledInput.endsWith('.A')?'K':'A'}`;
-    if (!ground.includes(ledGround)) fail('E_UNSUPPORTED_CIRCUIT', 'All three LED return terminals must share GND/GND1');
+    if (!ground.includes(ledGround)) fail('E_UNSUPPORTED_CIRCUIT', 'All LED return terminals must share GND/GND1');
     branches.push({signal,resistor,resistorInput,resistorOutput,led,ledInput,ledGround});
   }
-  if (new Set(branches.map(b=>b.resistor)).size !== 3 || new Set(branches.map(b=>b.led)).size !== 3)
+  if (new Set(branches.map(b=>b.resistor)).size !== count || new Set(branches.map(b=>b.led)).size !== count)
     fail('E_UNSUPPORTED_CIRCUIT', 'Branches must use distinct resistors and LEDs');
   return {...c,uno,...branches[0],branches,warnings:branches.filter(b=>b.ledInput.endsWith('.K')).map(b=>`W_LED_POLARITY: ${b.led} reversed as explicitly requested; input preserved.`)};
 }

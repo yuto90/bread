@@ -15,6 +15,7 @@ export function physicalNetlist(circuit: Resolved, physical: Placement): Netlist
     occupied.add(hole);
   };
   const branches = branchesOf(circuit);
+  if (branches.length > 6) fail('E_PLACEMENT_CAPACITY', 'Fixed-board footprint supports at most six branches');
   const required = branches.flatMap(b=>[`${b.resistor}.1`,`${b.resistor}.2`,`${b.led}.A`,`${b.led}.K`]).sort();
   if (JSON.stringify(Object.keys(physical.leads).sort()) !== JSON.stringify(required))
     fail('E_PLACEMENT_FAILED', 'Missing or unexpected component leads');
@@ -51,7 +52,7 @@ export function physicalNetlist(circuit: Resolved, physical: Placement): Netlist
     const ledPoints = ['A','K'].map(pin => holePoint(physical.leads[`${branch.led}.${pin}`]));
     const rBox = {left:resistorPoints[0].x-9,right:resistorPoints[0].x+9,top:Math.min(...resistorPoints.map(p=>p.y))-4,bottom:Math.max(...resistorPoints.map(p=>p.y))+4};
     const lBox = {left:ledPoints[0].x-18,right:ledPoints[0].x+18,top:Math.min(...ledPoints.map(p=>p.y))-4,bottom:Math.max(...ledPoints.map(p=>p.y))+70};
-    if (lBox.bottom > 747 || rBox.bottom > 747)
+    if ([lBox,rBox].some(box=>box.bottom>747 || box.top<213 || box.left<744 || box.right>990))
       fail('E_PLACEMENT_FAILED', 'Component footprint extends beyond breadboard');
     boxes.push(rBox,lBox);
   }
