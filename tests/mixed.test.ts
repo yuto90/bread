@@ -65,7 +65,7 @@ test('Official Uno power, analog and digital socket positions',()=>{
  assert.deepEqual(unoPins.D2,{x:478.94,y:247.78});assert.deepEqual(unoPins.D4,{x:443.38,y:247.78});
 });
 test('Mixed routes have exact endpoints, no collinear overlap and no false endpoint junctions',()=>{
- const wires=routeMixed(compile(source).placement);
+ const compiled=compile(source),wires=routeMixed(compiled.placement,compiled.circuit);
  for(const w of wires){assert.deepEqual(w.points[0],w.from.startsWith('uno.')?unoPoint(w.from.split('.')[1]):boardPoint(w.from));assert.deepEqual(w.points.at(-1),boardPoint(w.to));}
  for(let i=0;i<wires.length;i++)for(let j=i+1;j<wires.length;j++)for(let a=1;a<wires[i].points.length;a++)for(let b=1;b<wires[j].points.length;b++){
   const [p,q]=[wires[i].points[a-1],wires[i].points[a]],[s,t]=[wires[j].points[b-1],wires[j].points[b]];

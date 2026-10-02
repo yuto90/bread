@@ -19,6 +19,8 @@
     "scripts/serve-playground.ts",
     "scripts/verify-build.ts",
     "playwright.config.ts",
-    "e2e/**/*.ts"
+    "e2e/**/*.ts",
+    "scripts/routing-corpus.ts",
+    "scripts/measure-routing.ts"
   ]
 }

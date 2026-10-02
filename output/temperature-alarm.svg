@@ -3,7 +3,7 @@
 <text x="45" y="85" font-size="31" fill="#173b35" font-weight="700">Temperature alarm · wiring study</text>
 <text x="45" y="115" font-size="18" fill="#27433e" >Pushbutton · 10kΩ trim potentiometer · bare 4-pin DHT22 · LED</text>
 <text x="1255" y="65" font-size="17" fill="#236247" font-weight="700">8 STATIC NETS VERIFIED</text>
-<path d="M70,310 L521.612,310 L532.28,320.668 L532.28,400.678 L550.06,418.458 L550.06,647.82 L532.28,665.6 L532.28,683.38 L70,683.38 Z" fill="#087e89" stroke="#05616a" stroke-width="3"/>
+<path data-route-body="uno" d="M70,310 L521.612,310 L532.28,320.668 L532.28,400.678 L550.06,418.458 L550.06,647.82 L532.28,665.6 L532.28,683.38 L70,683.38 Z" fill="#087e89" stroke="#05616a" stroke-width="3"/>
 <rect x="50" y="390" width="85" height="100" rx="5" fill="#a9babd" stroke="#627a7b"/><rect x="300" y="550" width="165" height="65" rx="4" fill="#253438"/>
 <text x="270" y="465" font-size="36" fill="white" font-weight="700">UNO R3</text>
 <text x="270" y="497" font-size="13" fill="#d7efeb" >TOP VIEW · USB LEFT</text>
@@ -412,7 +412,7 @@
 <text x="767" y="922" font-size="12" fill="#597568" text-anchor="end">28</text>
 <text x="767" y="946" font-size="12" fill="#597568" text-anchor="end">29</text>
 <text x="767" y="970" font-size="12" fill="#597568" text-anchor="end">30</text>
-<rect x="782" y="290" width="88" height="130" rx="8" fill="#f6f4ed" stroke="#9aafa0" stroke-width="2"/>
+<rect data-route-body="temperature" x="782" y="290" width="88" height="130" rx="8" fill="#f6f4ed" stroke="#9aafa0" stroke-width="2"/>
 <path d="M795 306 H856" stroke="#b8c2b4" stroke-width="4"/>
 <path d="M795 317 H856" stroke="#b8c2b4" stroke-width="4"/>
 <path d="M795 328 H856" stroke="#b8c2b4" stroke-width="4"/>
@@ -423,82 +423,82 @@
 <path d="M795 383 H856" stroke="#b8c2b4" stroke-width="4"/>
 <path d="M795 394 H856" stroke="#b8c2b4" stroke-width="4"/>
 <text x="826" y="436" font-size="14" fill="#4f6d59" text-anchor="middle">1 · DHT22</text>
-<path d="M1006 294 H996 V373 M1006 318 H1016 V373" fill="none" stroke="#879494" stroke-width="3"/><path d="M988 396 V373 A18 18 0 0 1 1024 373 V396Z" fill="#e8484e" stroke="#97383a" stroke-width="2"/>
+<path d="M1006 294 H996 V373 M1006 318 H1016 V373" fill="none" stroke="#879494" stroke-width="3"/><path data-route-body="alarm" d="M988 396 V373 A18 18 0 0 1 1024 373 V396Z" fill="#e8484e" stroke="#97383a" stroke-width="2"/>
 <text x="1006" y="386" font-size="15" fill="white" text-anchor="middle">2</text>
 <text x="979" y="306" font-size="11" fill="#a33539" >A</text>
 <text x="1022" y="330" font-size="11" fill="#a33539" >K</text>
-<rect x="815" y="562" width="46" height="88" rx="5" fill="#3d72a4" stroke="#264c72"/><circle cx="838" cy="577" r="12" fill="#e2c35a"/><path d="M830 577 H846" stroke="#765d20" stroke-width="3"/>
+<rect data-route-body="threshold" x="815" y="562" width="46" height="88" rx="5" fill="#3d72a4" stroke="#264c72"/><circle cx="838" cy="577" r="12" fill="#e2c35a"/><path d="M830 577 H846" stroke="#765d20" stroke-width="3"/>
 <text x="838" y="646" font-size="15" fill="white" text-anchor="middle">3</text>
-<rect x="893" y="508" width="58" height="52" rx="5" fill="#b5bbb6" stroke="#536762"/><circle cx="922" cy="534" r="18" fill="#303e39"/>
+<rect data-route-body="acknowledge" x="893" y="508" width="58" height="52" rx="5" fill="#b5bbb6" stroke="#536762"/><circle cx="922" cy="534" r="18" fill="#303e39"/>
 <text x="922" y="539" font-size="15" fill="white" text-anchor="middle">4</text>
-<path d="M1054 342 V438" stroke="#8d9a9a" stroke-width="4"/><rect x="1044" y="362" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
+<path d="M1054 342 V438" stroke="#8d9a9a" stroke-width="4"/><rect data-route-body="limit" x="1044" y="362" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
 <rect x="1044" y="373" width="20" height="5" fill="#c74035"/>
 <rect x="1044" y="385" width="20" height="5" fill="#c74035"/>
 <rect x="1044" y="397" width="20" height="5" fill="#8a5d39"/>
 <text x="1069" y="395" font-size="14" fill="#654d28" font-weight="700">5</text>
-<path d="M1054 486 V582" stroke="#8d9a9a" stroke-width="4"/><rect x="1044" y="506" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
+<path d="M1054 486 V582" stroke="#8d9a9a" stroke-width="4"/><rect data-route-body="pulldown" x="1044" y="506" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
 <rect x="1044" y="517" width="20" height="5" fill="#885c34"/>
 <rect x="1044" y="529" width="20" height="5" fill="#222"/>
 <rect x="1044" y="541" width="20" height="5" fill="#da9b2f"/>
 <text x="1069" y="539" font-size="14" fill="#654d28" font-weight="700">6</text>
-<path d="M886 582 V678" stroke="#8d9a9a" stroke-width="4"/><rect x="876" y="602" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
+<path d="M886 582 V678" stroke="#8d9a9a" stroke-width="4"/><rect data-route-body="pullup" x="876" y="602" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
 <rect x="876" y="613" width="20" height="5" fill="#885c34"/>
 <rect x="876" y="625" width="20" height="5" fill="#222"/>
 <rect x="876" y="637" width="20" height="5" fill="#da9b2f"/>
 <text x="901" y="635" font-size="14" fill="#654d28" font-weight="700">7</text>
-<g data-wire="1"><title>uno.5V → A3</title><path d="M336.7 665.6 L336.7 740 L570 740 L570 326 L790 326 L790 318" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M336.7 665.6 L336.7 740 L570 740 L570 326 L790 326 L790 318" fill="none" stroke="#d15147" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="1"><title>uno.5V → A3</title><path d="M336.7 665.6 L336.7 692 L610 692 L610 318 L790 318" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M336.7 665.6 L336.7 692 L610 692 L610 318 L790 318" fill="none" stroke="#d15147" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="336.7" cy="665.6" r="5" fill="white" stroke="#d15147" stroke-width="2"/>
 <circle cx="790" cy="318" r="5" fill="white" stroke="#d15147" stroke-width="2"/>
 </g>
-<g data-wire="2"><title>uno.D4 → F10</title><path d="M443.38 327.78 L443.38 167 L579 167 L579 478 L958 478 L958 486" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M443.38 327.78 L443.38 167 L579 167 L579 478 L958 478 L958 486" fill="none" stroke="#a4609c" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="2"><title>uno.D4 → F10</title><path d="M443.38 327.78 L443.38 280 L950 280 L950 486 L958 486" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M443.38 327.78 L443.38 280 L950 280 L950 486 L958 486" fill="none" stroke="#a4609c" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="443.38" cy="327.78" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
 <circle cx="958" cy="486" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
 </g>
-<g data-wire="3"><title>uno.GND1 → G3</title><path d="M254.912 327.78 L254.912 184 L570 184 L570 310 L982 310 L982 318" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M254.912 327.78 L254.912 184 L570 184 L570 310 L982 310 L982 318" fill="none" stroke="#34424a" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="3"><title>uno.GND1 → G3</title><path d="M254.912 327.78 L254.912 175 L982 175 L982 318" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M254.912 327.78 L254.912 175 L982 175 L982 318" fill="none" stroke="#34424a" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="254.912" cy="327.78" r="5" fill="white" stroke="#34424a" stroke-width="2"/>
 <circle cx="982" cy="318" r="5" fill="white" stroke="#34424a" stroke-width="2"/>
 </g>
-<g data-wire="4"><title>uno.D13 → F4</title><path d="M272.692 327.78 L272.692 201 L588 201 L588 334 L958 334 L958 342" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M272.692 327.78 L272.692 201 L588 201 L588 334 L958 334 L958 342" fill="none" stroke="#c08b23" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="4"><title>uno.D13 → F4</title><path d="M272.692 327.78 L272.692 205 L966 205 L966 342 L958 342" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M272.692 327.78 L272.692 205 L966 205 L966 342 L958 342" fill="none" stroke="#c08b23" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="272.692" cy="327.78" r="5" fill="white" stroke="#c08b23" stroke-width="2"/>
 <circle cx="958" cy="342" r="5" fill="white" stroke="#c08b23" stroke-width="2"/>
 </g>
-<g data-wire="5"><title>uno.D2 → B4</title><path d="M478.94 327.78 L478.94 218 L597 218 L597 330 L814 330 L814 342" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M478.94 327.78 L478.94 218 L597 218 L597 330 L814 330 L814 342" fill="none" stroke="#536bc3" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="5"><title>uno.D2 → B4</title><path d="M478.94 327.78 L478.94 302 L570 302 L570 428 L814 428 L814 342" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M478.94 327.78 L478.94 302 L570 302 L570 428 L814 428 L814 342" fill="none" stroke="#536bc3" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="478.94" cy="327.78" r="5" fill="white" stroke="#536bc3" stroke-width="2"/>
 <circle cx="814" cy="342" r="5" fill="white" stroke="#536bc3" stroke-width="2"/>
 </g>
-<g data-wire="6"><title>uno.A0 → A15</title><path d="M425.6 665.6 L425.6 840 L579 840 L579 614 L790 614 L790 606" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M425.6 665.6 L425.6 840 L579 840 L579 614 L790 614 L790 606" fill="none" stroke="#a4609c" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="6"><title>uno.A0 → A15</title><path d="M425.6 665.6 L425.6 698 L782 698 L782 606 L790 606" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M425.6 665.6 L425.6 698 L782 698 L782 606 L790 606" fill="none" stroke="#a4609c" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="425.6" cy="665.6" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
 <circle cx="790" cy="606" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
 </g>
-<g data-wire="7"><title>A11 → A14</title><path d="M790 510 L790 518 L700 518 L700 574 L790 574 L790 582" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 510 L790 518 L700 518 L700 574 L790 574 L790 582" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="7"><title>A11 → A14</title><path d="M790 510 L790 582" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 510 L790 582" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="790" cy="510" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="790" cy="582" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="8"><title>B3 → B11</title><path d="M814 318 L814 326 L1160 326 L1160 502 L814 502 L814 510" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M814 318 L814 326 L1160 326 L1160 502 L814 502 L814 510" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="8"><title>B3 → B11</title><path d="M814 318 L878 318 L878 510 L814 510" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M814 318 L878 318 L878 510 L814 510" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="814" cy="318" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="814" cy="510" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="9"><title>G10 → G13</title><path d="M982 486 L982 494 L1169 494 L1169 550 L982 550 L982 558" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M982 486 L982 494 L1169 494 L1169 550 L982 550 L982 558" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="9"><title>G10 → G13</title><path d="M982 486 L982 558" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M982 486 L982 558" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="982" cy="486" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="982" cy="558" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="10"><title>F2 → F8</title><path d="M958 294 L958 302 L1169 302 L1169 430 L958 430 L958 438" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 294 L958 302 L1169 302 L1169 430 L958 430 L958 438" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="10"><title>F2 → F8</title><path d="M958 294 L972 294 L972 438 L958 438" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 294 L972 294 L972 438 L958 438" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="958" cy="294" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="958" cy="438" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="11"><title>F14 → E16</title><path d="M958 582 L958 590 L1160 590 L1160 622 L886 622 L886 630" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 582 L958 590 L1160 590 L1160 622 L886 622 L886 630" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="11"><title>F14 → E16</title><path d="M958 582 L958 630 L886 630" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 582 L958 630 L886 630" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="958" cy="582" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="886" cy="630" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="12"><title>F3 → D6</title><path d="M958 318 L958 306 L700 306 L700 382 L862 382 L862 390" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 318 L958 306 L700 306 L700 382 L862 382 L862 390" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="12"><title>F3 → D6</title><path d="M958 318 L910 318 L910 428 L862 428 L862 390" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 318 L910 318 L910 428 L862 428 L862 390" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="958" cy="318" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="862" cy="390" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="13"><title>A6 → A16</title><path d="M790 390 L790 398 L691 398 L691 622 L790 622 L790 630" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 390 L790 398 L691 398 L691 622 L790 622 L790 630" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="13"><title>A6 → A16</title><path d="M790 390 L790 434 L798 434 L798 630 L790 630" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 390 L790 434 L798 434 L798 630 L790 630" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="790" cy="390" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="790" cy="630" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
-<g data-wire="14"><title>A4 → A18</title><path d="M790 342 L790 350 L682 350 L682 670 L790 670 L790 678" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 342 L790 350 L682 350 L682 670 L790 670 L790 678" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<g data-wire="14"><title>A4 → A18</title><path d="M790 342 L774 342 L774 678 L790 678" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M790 342 L774 342 L774 678 L790 678" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
 <circle cx="790" cy="342" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 <circle cx="790" cy="678" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
 </g>
@@ -569,7 +569,7 @@
 <text x="50" y="1080" font-size="16" fill="#27433e" >10kΩ DATA pull-up to 5V; 10kΩ button pull-down to ground.</text>
 <text x="50" y="1108" font-size="16" fill="#27433e" >Wire crossings are not junctions. Follow the insertion guide.</text>
 <text x="50" y="1143" font-size="16" fill="#94692c" >Button leads: assumed formed to 7.62 × 5.08mm; fit untested.</text>
-<text x="50" y="1171" font-size="15" fill="#667e70" >Raised / cutaway part drawings expose pins. No physical hardware test.</text>
+<text x="50" y="1171" font-size="15" fill="#667e70" >Raised-body terminal exits can cross drawings; mechanical clearance remains unverified.</text>
 <rect x="45" y="1220" width="1630" height="62" rx="12" fill="#e4ede6"/>
 <text x="65" y="1246" font-size="17" fill="#335848" font-weight="700">8 static nets · 8 components · 14 jumpers · one fixed 300-hole board</text>
 <text x="65" y="1270" font-size="15" fill="#27433e" >Wiring consistency only — no firmware, temperature threshold behavior, switching simulation or alarm validation.</text>

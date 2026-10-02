@@ -1,0 +1,382 @@
+{
+  "node": "v24.19.0",
+  "baselineCommit": "bc981d981e3e4bb0c348da11174f7f518bf09905",
+  "note": "Timing is observational, not a CI wall-clock threshold. Terminal escapes include six Uno sockets and seven exits beneath the raised sensor illustration; no assembly-clearance claim.",
+  "cases": [
+    {
+      "id": "canonical",
+      "beforeCrossings": 27,
+      "crossings": 8,
+      "length": 6291.696,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 43.65,
+        "max": 68.16
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-2-6-10",
+      "beforeCrossings": 28,
+      "crossings": 11,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 43.86,
+        "max": 55.72
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-2-6-10",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 38.96,
+        "max": 42.33
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-3-7-11",
+      "beforeCrossings": 28,
+      "crossings": 11,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 41.76,
+        "max": 42.59
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-3-7-11",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 34.72,
+        "max": 36.1
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-4-8-12",
+      "beforeCrossings": 28,
+      "crossings": 11,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 43.41,
+        "max": 44.98
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-4-8-12",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 37.94,
+        "max": 38.3
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-5-9-13",
+      "beforeCrossings": 28,
+      "crossings": 11,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 43.48,
+        "max": 44.19
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-5-9-13",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.58,
+        "max": 39.48
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-6-10-2",
+      "beforeCrossings": 26,
+      "crossings": 9,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 40.91,
+        "max": 42.14
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-6-10-2",
+      "beforeCrossings": 30,
+      "crossings": 9,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.84,
+        "max": 37.07
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-7-11-3",
+      "beforeCrossings": 26,
+      "crossings": 9,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 35.6,
+        "max": 36.52
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-7-11-3",
+      "beforeCrossings": 30,
+      "crossings": 9,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 32.53,
+        "max": 34.14
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-8-12-4",
+      "beforeCrossings": 26,
+      "crossings": 9,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.08,
+        "max": 37.77
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-8-12-4",
+      "beforeCrossings": 30,
+      "crossings": 9,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 31.94,
+        "max": 32.41
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-9-13-5",
+      "beforeCrossings": 26,
+      "crossings": 9,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 37.45,
+        "max": 39.05
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-9-13-5",
+      "beforeCrossings": 30,
+      "crossings": 9,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 32.52,
+        "max": 33.26
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-10-2-6",
+      "beforeCrossings": 28,
+      "crossings": 9,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 40.35,
+        "max": 40.71
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-10-2-6",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6273.916,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.81,
+        "max": 37.47
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-11-3-7",
+      "beforeCrossings": 28,
+      "crossings": 9,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 40.05,
+        "max": 40.68
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-11-3-7",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6327.256,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.82,
+        "max": 39.57
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-12-4-8",
+      "beforeCrossings": 28,
+      "crossings": 9,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 40.34,
+        "max": 42.12
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-12-4-8",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6391.264,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.89,
+        "max": 37.71
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "pins-13-5-9",
+      "beforeCrossings": 28,
+      "crossings": 9,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 39.41,
+        "max": 43.06
+      },
+      "physicalMatchesLogical": true
+    },
+    {
+      "id": "renamed-reordered-13-5-9",
+      "beforeCrossings": 32,
+      "crossings": 11,
+      "length": 6444.604,
+      "bends": 31,
+      "terminalEscapes": 13,
+      "violations": [],
+      "routeMs": {
+        "samples": 5,
+        "median": 36.26,
+        "max": 37.85
+      },
+      "physicalMatchesLogical": true
+    }
+  ]
+}

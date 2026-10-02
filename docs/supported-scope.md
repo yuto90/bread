@@ -47,7 +47,8 @@ bounded, not complete: a physically feasible circuit may still be rejected.
 
 ## Quality limits and evidence
 
-The six-LED diagram has 17 crossing points; the mixed diagram has 27. Crossings
+The six-LED diagram has 17 crossing points; the mixed diagram now has 8, down
+from 27. See [routing verification and terminal exceptions](mixed-routing.md). Crossings
 are not junctions. Neither the historical unpushed 10-crossing improvement nor a
 new general router is present. Capacity is an algorithm/footprint limit, not a
 claim about the absolute capacity of every real breadboard.
