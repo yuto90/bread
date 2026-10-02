@@ -1,5 +1,7 @@
 # Bread
 
+English · [日本語](README.ja.md)
+
 **Describe connections. Get an automatically placed breadboard wiring diagram.**
 
 Bread turns a small `.bread` text file into a standalone SVG with realistic
@@ -31,6 +33,17 @@ Open **http://127.0.0.1:4173** for the editor, six sample circuits, live errors,
 zoom and SVG downloads. The loopback server serves static files; compilation runs
 inside a browser Worker. Edits stay in the tab and are lost on reload or sample
 replacement. Restart the server after source changes.
+
+Use **English / 日本語** in the header. The first visit follows a supported browser
+language (English fallback); explicit choices are remembered locally. Source, DSL
+identifiers and SVG exports are unchanged by translation. Japanese diagnostic
+guidance retains the original compiler detail.
+
+After starting the server, read the [English guides](http://127.0.0.1:4173/docs/)
+or [日本語ガイド](http://127.0.0.1:4173/docs/ja/): quickstart, syntax, parts,
+source/preview examples, diagnostics, limits, licensing and contributing. These
+are **local addresses**, not a newly published site. The same static build keeps
+the Playground at `/` and docs at `/docs/`.
 
 ```bread
 bread 0.1
@@ -100,12 +113,14 @@ installation and evidence artifacts. See [contributing](CONTRIBUTING.md),
 net reconstruction → comparison → routing → SVG`
 
 `src/` contains the core and CLI; `parts/` contains physical definitions;
-`playground/` is a browser adapter over that same core. The physical verifier
+`playground/` is a browser adapter over that same core. `docs-site/` holds the
+bilingual guide content and static styles/search; its previews are compiled from
+the actual `examples/` sources during the build. The physical verifier
 unions actual board strips, component conductor facts and jumper endpoints,
 without reusing expected net labels or logical connection edges.
 
-The next engineering milestone is routing quality with explicit benchmark and
-capacity criteria, followed by hardware-fit and beginner-usability validation.
+Remaining engineering work includes routing/label readability and mechanical
+clearance, followed by hardware-fit and beginner-usability validation.
 Simulation, an AI service, package publication and public hosting are outside
 this foundation change. The [original requirements](docs/requirements/) preserve
 the product vision and historical experiment; they are not a promise that every

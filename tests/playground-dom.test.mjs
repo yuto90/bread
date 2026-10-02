@@ -94,7 +94,14 @@ test('Playground DOM: samples, stale-result guard, errors, warnings, download, z
     // A worker result received after another edit cannot re-enable download.
     edit(example('blink')); await wait(200); const olderRequest = requests.at(-1);
     edit('bread 0.1\nwrong');
+    const language = document.getElementById('language');
+    language.value = 'ja'; language.dispatchEvent(new window.Event('change'));
+    assert.equal(document.documentElement.lang, 'ja');
+    assert.equal(status.dataset.state, 'pending');
+    assert.equal(source.value, 'bread 0.1\nwrong');
+    assert.equal(download.disabled, true);
     worker.complete(olderRequest);
+    language.value = 'en'; language.dispatchEvent(new window.Event('change'));
     assert.equal(download.disabled, true); assert.equal(status.dataset.state, 'pending');
     await wait(200); worker.complete(requests.at(-1));
     assert.equal(status.dataset.state, 'error'); assert.match(status.textContent, /Showing last valid preview/);

@@ -50,6 +50,27 @@ replacement. No source code is uploaded or saved to storage. There is no
 application backend, account, database, AI API or simulator. The development
 server serves files only; all compilation happens in the browser.
 
+## Languages and documentation
+
+The English / 日本語 selector translates UI text, accessible labels, sample
+descriptions, live status and diagnostic guidance. A valid saved choice takes
+precedence over supported browser languages; unknown languages fall back to
+English. Denied storage leaves switching functional within the current tab.
+Only `bread.language` is stored, never circuit source. An explicit `?lang=en` or
+`?lang=ja` link overrides the initial choice without silently changing storage.
+
+DSL IDs, filenames, stable error codes and the renderer's SVG bytes are not
+translated. Japanese diagnostics preserve the original detail after localized
+guidance. Switching language does not recompile, replace source, or enable a stale
+download. `?sample=...` accepts only the six shipped sample IDs; unknown values
+fall back to the blink sample.
+
+The build includes nine guides in each language at `/docs/` and `/docs/ja/`, with
+matching navigation, on-page anchors and same-origin local search. Examples and
+SVGs are generated from the actual source and renderer; attribution is retained.
+See [the docs/localization verification record](bilingual-docs.md). No hosting
+configuration or public deployment is part of this change.
+
 ## Boundaries
 
 This extends published commit `c8c7045c6625c3af1d92c4854e14c5d10d62a9b0`.
