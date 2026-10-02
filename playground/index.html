@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob:; worker-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'self'">
+  <meta name="description" content="Turn connection-only Bread code into an electrically checked breadboard wiring diagram, directly in your browser.">
+  <title>Bread Playground</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./playground/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#source">Skip to editor</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Bread Playground home"><img src="./icon.svg" width="33" height="33" alt=""><span>bread<span class="brand-dot">.</span></span></a>
+    <span class="product-label">PLAYGROUND <span>0.1</span></span>
+    <span class="local-badge"><span class="dot"></span> Runs in your browser</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">LESS GUESSWORK. MORE MAKING.</p><h1 id="page-title">Connections in.<br class="mobile-break"> Wiring out.</h1><p class="lede">Describe what connects. Bread takes care of the placement.</p></div>
+      <div class="intro-note"><span class="note-mark">↳</span><p>From a few lines of code<br>to your next breadboard.</p></div>
+    </section>
+    <section class="workbench" aria-label="Bread editor and wiring preview">
+      <div class="sample-bar">
+        <span class="sample-label">START WITH A SAMPLE</span>
+        <div class="samples" role="group" aria-label="Circuit samples">
+          <button class="sample active" data-sample="blink" aria-pressed="true" disabled><span class="sample-number">01</span> One LED</button>
+          <button class="sample" data-sample="three-leds" aria-pressed="false" disabled><span class="sample-number">03</span> Three LEDs</button>
+          <button class="sample" data-sample="6-leds" aria-pressed="false" disabled><span class="sample-number">06</span> Six LEDs</button>
+          <button class="sample" data-sample="temperature-alarm" aria-pressed="false" disabled><span class="sample-number">MIX</span> Mixed parts</button>
+        </div>
+      </div>
+      <div class="panels">
+        <section class="editor-panel" aria-labelledby="editor-heading">
+          <div class="panel-bar editor-bar"><h2 id="editor-heading"><span class="file-icon">⌘</span> <span id="filename">blink.bread</span></h2><span class="live-label"><span class="dot"></span> LIVE</span></div>
+          <div class="editor-shell"><div id="line-numbers" class="line-numbers" aria-hidden="true">1</div><label class="sr-only" for="source">Bread source code</label><textarea id="source" maxlength="32768" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="editor-hint" wrap="off" disabled></textarea></div>
+          <div class="editor-footer"><span id="cursor-position">Ln 1, Col 1</span><span>Bread 0.1 <span class="muted">/</span> UTF-8</span></div>
+          <div id="diagnostic" class="diagnostic" hidden><div class="diagnostic-heading"><strong id="error-code"></strong><button id="error-line" type="button" hidden></button></div><p id="error-message"></p></div>
+          <p id="editor-hint" class="editor-hint">Edit connections to update the preview. Your edits stay in this tab and aren’t saved after reload. Limit: 32,768 characters.</p>
+        </section>
+        <section class="preview-panel" aria-labelledby="preview-heading">
+          <div class="panel-bar preview-bar"><h2 id="preview-heading">Wiring preview</h2><div class="preview-actions"><button id="download" class="download" type="button" disabled><span aria-hidden="true">↓</span> Download SVG</button></div></div>
+          <div id="preview-status" class="preview-status" role="status" aria-live="polite"><span class="status-dot"></span><span id="status-text">Loading the playground…</span></div>
+          <div class="preview-viewport" id="preview-viewport" tabindex="0" aria-label="Wiring diagram. Use zoom controls to inspect and scroll the diagram.">
+            <div id="preview-stage" class="preview-stage"><div id="empty-preview" class="empty-preview"><span class="empty-symbol">↗</span><p>Your wiring starts here</p><span>Loading the first sample…</span></div><img id="wiring-image" class="wiring-image" alt="" hidden></div>
+          </div>
+          <div class="preview-footer"><span id="circuit-stats">Connection-only · static wiring</span><div class="zoom-controls" role="group" aria-label="Preview zoom"><button id="zoom-out" aria-label="Zoom out" disabled>−</button><output id="zoom-level" aria-live="polite">100%</output><button id="zoom-in" aria-label="Zoom in" disabled>+</button><span class="control-divider"></span><button id="zoom-fit" disabled>Fit</button></div></div>
+          <div id="warnings" class="warnings" role="status" hidden></div>
+        </section>
+      </div>
+    </section>
+    <section class="below-workbench" aria-label="How Bread works">
+      <div class="pipeline"><span>01 <b>Describe</b></span><i>→</i><span>02 <b>Verify</b></span><i>→</i><span>03 <b>Wire</b></span></div>
+      <p>Static wiring, not a circuit simulator. Supported samples use an Uno R3 and a fixed 300-hole breadboard. Component fit and real hardware behavior still need checking.</p>
+    </section>
+    <details class="syntax-guide"><summary>A little syntax goes a long way <span>Quick reference + current limits</span></summary><div class="guide-content"><div><h3>Describe connections only</h3><p>Begin with <code>bread 0.1</code>, declare a part with <code>part led: led-5mm-red</code>, then connect its pins with <code>led.K -- uno.GND</code>. Use <code>//</code> for comments.</p></div><div><h3>A deliberately small playground</h3><p>Try one or three to six resistor/LED branches, or the mixed-parts wiring study. Arbitrary circuits and manual layout are not supported. Six-LED and mixed diagrams can have crossing wires; a crossing is not a junction.</p></div></div></details>
+  </main>
+  <footer class="site-footer"><span>bread. <span class="muted">A connection-only experiment.</span></span><span>No account. No upload. Just connections.</span></footer>
+  <noscript><p class="noscript">Enable JavaScript to use the editor and live wiring preview. The command-line Bread renderer is also available in this repository.</p></noscript>
+</body>
+</html>

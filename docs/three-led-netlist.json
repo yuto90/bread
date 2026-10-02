@@ -1,0 +1,110 @@
+{
+  "expected": [
+    [
+      "led1.A",
+      "r1.2"
+    ],
+    [
+      "led1.K",
+      "led2.K",
+      "led3.K",
+      "uno.GND1"
+    ],
+    [
+      "led2.A",
+      "r2.2"
+    ],
+    [
+      "led3.A",
+      "r3.2"
+    ],
+    [
+      "r1.1",
+      "uno.D13"
+    ],
+    [
+      "r2.1",
+      "uno.D12"
+    ],
+    [
+      "r3.1",
+      "uno.D11"
+    ]
+  ],
+  "actual": [
+    [
+      "led1.A",
+      "r1.2"
+    ],
+    [
+      "led1.K",
+      "led2.K",
+      "led3.K",
+      "uno.GND1"
+    ],
+    [
+      "led2.A",
+      "r2.2"
+    ],
+    [
+      "led3.A",
+      "r3.2"
+    ],
+    [
+      "r1.1",
+      "uno.D13"
+    ],
+    [
+      "r2.1",
+      "uno.D12"
+    ],
+    [
+      "r3.1",
+      "uno.D11"
+    ]
+  ],
+  "placement": {
+    "leads": {
+      "r1.1": "E2",
+      "r1.2": "E6",
+      "led1.A": "C6",
+      "led1.K": "C7",
+      "r2.1": "E11",
+      "r2.2": "E15",
+      "led2.A": "C15",
+      "led2.K": "C16",
+      "r3.1": "E20",
+      "r3.2": "E24",
+      "led3.A": "C24",
+      "led3.K": "C25"
+    },
+    "jumpers": [
+      {
+        "pin": "uno.D13",
+        "hole": "A2"
+      },
+      {
+        "pin": "uno.D12",
+        "hole": "A11"
+      },
+      {
+        "pin": "uno.D11",
+        "hole": "A20"
+      },
+      {
+        "pin": "uno.GND1",
+        "hole": "A25"
+      }
+    ],
+    "links": [
+      {
+        "fromHole": "D7",
+        "toHole": "D16"
+      },
+      {
+        "fromHole": "E16",
+        "toHole": "D25"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "logical": [
+    [
+      "led.A",
+      "r1.2"
+    ],
+    [
+      "led.K",
+      "uno.GND1"
+    ],
+    [
+      "r1.1",
+      "uno.D13"
+    ]
+  ],
+  "physical": [
+    [
+      "led.A",
+      "r1.2"
+    ],
+    [
+      "led.K",
+      "uno.GND1"
+    ],
+    [
+      "r1.1",
+      "uno.D13"
+    ]
+  ],
+  "placement": {
+    "leads": {
+      "r1.1": "E10",
+      "r1.2": "E14",
+      "led.A": "C14",
+      "led.K": "C15"
+    },
+    "jumpers": [
+      {
+        "pin": "uno.D13",
+        "hole": "A10"
+      },
+      {
+        "pin": "uno.GND1",
+        "hole": "A15"
+      }
+    ]
+  }
+}

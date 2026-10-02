@@ -1,0 +1,33 @@
+bread 0.1
+title "6 LEDs · capacity study"
+part uno: arduino-uno-r3
+part r1: resistor [value=220ohm]
+part led1: led-5mm-red
+part r2: resistor [value=220ohm]
+part led2: led-5mm-red
+part r3: resistor [value=220ohm]
+part led3: led-5mm-red
+part r4: resistor [value=220ohm]
+part led4: led-5mm-red
+part r5: resistor [value=220ohm]
+part led5: led-5mm-red
+part r6: resistor [value=220ohm]
+part led6: led-5mm-red
+uno.D13 -- r1.1
+r1.2 -- led1.A
+led1.K -- uno.GND
+uno.D12 -- r2.1
+r2.2 -- led2.A
+led2.K -- uno.GND
+uno.D11 -- r3.1
+r3.2 -- led3.A
+led3.K -- uno.GND
+uno.D10 -- r4.1
+r4.2 -- led4.A
+led4.K -- uno.GND
+uno.D9 -- r5.1
+r5.2 -- led5.A
+led5.K -- uno.GND
+uno.D8 -- r6.1
+r6.2 -- led6.A
+led6.K -- uno.GND

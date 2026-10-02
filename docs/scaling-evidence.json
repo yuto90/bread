@@ -1,0 +1,195 @@
+{
+  "node": "v24.19.0",
+  "results": [
+    {
+      "branches": 3,
+      "components": 7,
+      "breadboards": 1,
+      "holes": 300,
+      "occupiedHoles": 20,
+      "jumpers": 6,
+      "nets": 7,
+      "physicalEqualsLogical": true,
+      "crossingPoints": 0,
+      "crossings": [],
+      "collinearOverlaps": [],
+      "renderMs": {
+        "samples": 100,
+        "warmup": 1,
+        "median": 0.9201799999999878,
+        "p95": 1.4646029999999826
+      },
+      "placement": {
+        "leads": {
+          "r1.1": "E2",
+          "r1.2": "E6",
+          "led1.A": "C6",
+          "led1.K": "C7",
+          "r2.1": "E11",
+          "r2.2": "E15",
+          "led2.A": "C15",
+          "led2.K": "C16",
+          "r3.1": "E20",
+          "r3.2": "E24",
+          "led3.A": "C24",
+          "led3.K": "C25"
+        },
+        "jumpers": [
+          {
+            "pin": "uno.D13",
+            "hole": "A2"
+          },
+          {
+            "pin": "uno.D12",
+            "hole": "A11"
+          },
+          {
+            "pin": "uno.D11",
+            "hole": "A20"
+          },
+          {
+            "pin": "uno.GND1",
+            "hole": "A25"
+          }
+        ],
+        "links": [
+          {
+            "fromHole": "D7",
+            "toHole": "D16"
+          },
+          {
+            "fromHole": "E16",
+            "toHole": "D25"
+          }
+        ]
+      }
+    },
+    {
+      "branches": 6,
+      "components": 13,
+      "breadboards": 1,
+      "holes": 300,
+      "occupiedHoles": 41,
+      "jumpers": 12,
+      "nets": 13,
+      "physicalEqualsLogical": true,
+      "crossingPoints": 17,
+      "crossings": [
+        "0:3:710:188",
+        "0:4:710:204",
+        "0:5:710:220",
+        "1:3:690:188",
+        "1:4:690:204",
+        "1:5:690:220",
+        "2:3:670:188",
+        "2:4:670:204",
+        "2:5:670:220",
+        "3:4:1030:204",
+        "3:5:1030:220",
+        "4:5:1046:220",
+        "4:9:1010:404",
+        "4:10:978:404",
+        "5:9:1010:548",
+        "5:11:994:548",
+        "9:10:954:340"
+      ],
+      "collinearOverlaps": [],
+      "renderMs": {
+        "samples": 100,
+        "warmup": 1,
+        "median": 1.0732250000000079,
+        "p95": 1.6986890000000017
+      },
+      "placement": {
+        "leads": {
+          "r1.1": "E2",
+          "r1.2": "E6",
+          "led1.A": "C6",
+          "led1.K": "C7",
+          "r2.1": "E11",
+          "r2.2": "E15",
+          "led2.A": "C15",
+          "led2.K": "C16",
+          "r3.1": "E20",
+          "r3.2": "E24",
+          "led3.A": "C24",
+          "led3.K": "C25",
+          "r4.1": "F2",
+          "r4.2": "F6",
+          "led4.A": "H6",
+          "led4.K": "H7",
+          "r5.1": "F11",
+          "r5.2": "F15",
+          "led5.A": "H15",
+          "led5.K": "H16",
+          "r6.1": "F20",
+          "r6.2": "F24",
+          "led6.A": "H24",
+          "led6.K": "H25"
+        },
+        "jumpers": [
+          {
+            "pin": "uno.D13",
+            "hole": "A2"
+          },
+          {
+            "pin": "uno.D12",
+            "hole": "A11"
+          },
+          {
+            "pin": "uno.D11",
+            "hole": "A20"
+          },
+          {
+            "pin": "uno.D10",
+            "hole": "J2"
+          },
+          {
+            "pin": "uno.D9",
+            "hole": "J11"
+          },
+          {
+            "pin": "uno.D8",
+            "hole": "J20"
+          },
+          {
+            "pin": "uno.GND1",
+            "hole": "A25"
+          }
+        ],
+        "links": [
+          {
+            "fromHole": "D7",
+            "toHole": "D16"
+          },
+          {
+            "fromHole": "E16",
+            "toHole": "D25"
+          },
+          {
+            "fromHole": "E25",
+            "toHole": "I7"
+          },
+          {
+            "fromHole": "J7",
+            "toHole": "I16"
+          },
+          {
+            "fromHole": "J16",
+            "toHole": "I25"
+          }
+        ]
+      }
+    },
+    {
+      "branches": 10,
+      "components": 21,
+      "breadboards": 1,
+      "holes": 300,
+      "status": "rejected",
+      "code": "E_PLACEMENT_CAPACITY",
+      "message": "10 branches exceed the 6-branch capacity of the supported footprint on the fixed 30-row, two-bank breadboard",
+      "svgCreated": false
+    }
+  ]
+}

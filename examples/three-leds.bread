@@ -1,0 +1,24 @@
+bread 0.1
+
+title "Three LEDs · shared ground"
+
+part uno: arduino-uno-r3
+part r1: resistor [value=220ohm]
+part led1: led-5mm-red
+part r2: resistor [value=220ohm]
+part led2: led-5mm-red
+part r3: resistor [value=220ohm]
+part led3: led-5mm-red
+
+// Each signal has its own current-limiting resistor.
+uno.D13 -- r1.1
+r1.2 -- led1.A
+led1.K -- uno.GND
+
+uno.D12 -- r2.1
+r2.2 -- led2.A
+led2.K -- uno.GND
+
+uno.D11 -- r3.1
+r3.2 -- led3.A
+led3.K -- uno.GND
