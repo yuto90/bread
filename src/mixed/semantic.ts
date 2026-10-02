@@ -1,9 +1,11 @@
 import type {Circuit,Resolved} from '../model.ts';
 import {fail} from '../model.ts';
-import {mixedPins} from './parts.ts';
+import {mixedPins,isDiscrete} from './parts.ts';
+import {resolveDiscrete} from './discrete.ts';
 import {unoPins,canonicalPin} from '../../parts/arduino-uno-r3/index.ts';
 import {logicalNetlist} from '../netlist/index.ts';
 export function resolveMixed(ast:Circuit):Resolved {
+ if(isDiscrete(ast))return resolveDiscrete(ast);
  const seen=new Set<string>();
  for(const p of ast.parts){
   if(seen.has(p.id))fail('E_DUPLICATE_COMPONENT_ID',p.id);seen.add(p.id);

@@ -1,0 +1,16 @@
+bread 0.1
+title "Diode + LED with 100nF bypass"
+
+part uno: arduino-uno-r3
+part limit: resistor [value=220ohm]
+part diode: diode-1n4148
+part led: led-5mm-red
+part bypass: capacitor-c315c104 [value=100nF]
+
+uno.D13 -- limit.1
+limit.2 -- diode.A
+diode.K -- led.A
+led.K -- uno.GND
+// Non-polar 100nF ceramic capacitor; neither terminal is a permanent conductor.
+uno.5V -- bypass.1
+bypass.2 -- uno.GND

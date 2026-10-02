@@ -33,7 +33,7 @@ export function parse(source: string): Circuit {
       let value: string | undefined;
       if (m[3] !== undefined) {
         const attribute = m[3].match(/^value=([A-Za-z0-9]+)$/);
-        if (!attribute) fail('E_ATTRIBUTE', 'Only [value=220ohm] is supported', line);
+        if (!attribute) fail('E_ATTRIBUTE', 'Only one [value=...] attribute is supported', line);
         value = attribute[1];
       }
       circuit.parts.push({ id: m[1], type: m[2], value, line });

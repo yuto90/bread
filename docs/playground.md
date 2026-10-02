@@ -1,6 +1,6 @@
 # Bread Playground
 
-A local-only, static browser UI over Bread's existing parser, semantic resolver,
+A static browser UI over Bread's existing parser, semantic resolver,
 placement, netlist verification, routing and SVG renderer. The UI shares the CLI's checked core.
 
 ## Start
@@ -24,20 +24,20 @@ npm run build:playground
 
 The output is `dist/playground/`. Serve that directory over HTTP with a static
 server. Opening `index.html` via `file://` will not work reliably with ES modules,
-fetch and module workers. The Playground has not been deployed as a live site.
+fetch and module workers. Building this directory does not publish it.
 The baseline was merged in [PR #1](https://github.com/yuto90/bread/pull/1).
 
 ## Included
 
 - Live connection-only `.bread` editor with line numbers, caret position and a
   180 ms debounce; native Tab leaves the editor for keyboard navigation
-- One-LED, three-LED, six-LED and mixed-parts samples, copied from `examples/`
+- One-LED, three-LED, six-LED, mixed-parts, diode-LED and diode + 100nF samples, copied from `examples/`
   during build rather than maintained as a second set of strings
 - Compilation in a module worker; stale worker results and image-load callbacks
   cannot replace a newer edit
 - Stable error codes, messages and optional line numbers, with a jump-to-line
   control; line numbers are never guessed for topology-level errors
-- Separate warnings for reversed LED polarity and the qualified button footprint
+- Separate warnings for reversed LED polarity and the qualified button/diode footprints
 - Last-valid diagram retained and explicitly marked during errors or updates;
   downloads disabled until the current source compiles and its SVG image decodes
 - Fit and bounded 5–200% zoom, with scrollable inspection and automatic refit
@@ -59,7 +59,8 @@ is **not included**. The later [bounded mixed-routing change](mixed-routing.md) 
 retaining physical placement. Capacity and mechanical limits still apply.
 
 Supported topology is deliberately bounded: one branch or three to six contiguous
-D13-down LED/resistor branches, plus the shipped mixed-parts wiring study. Two
+D13-down LED/resistor branches, plus the shipped mixed-parts wiring study and
+the [bounded diode family](component-expansion.md) with an optional named 100nF capacitor. Two
 branches are not supported. Seven or more branches fail at placement capacity.
 A visually crossing wire is not an electrical junction. The mixed-parts example
 is a static wiring study, not a working temperature alarm; component fit and
@@ -83,10 +84,12 @@ npm run test:browser
 The [production foundation record](production-foundation.md) supersedes the
 2026-10-01 browser-access limitation. Actual local Chromium now exercises both
 desktop and phone-size viewports with real module Workers, CSP, Blob image
-decoding and SVG downloads. All four samples download byte-identically to the
+decoding and SVG downloads. All six samples download byte-identically to the
 core renderer. Errors, stale previews, capacity limits, warnings, recovery,
 zoom/Fit and keyboard Tab exit are covered. Screenshots:
 [desktop](images/playground-desktop.png), [phone](images/playground-phone.png).
+The [component verification record](component-expansion.md) includes new sample
+screenshots and independent SVG body/lead measurements.
 
 Core/CLI/DOM regression tests remain in `npm test`; mocked race and failure cases
 complement the browser scenarios. Browser tests caught and now guard a desktop
@@ -94,5 +97,5 @@ preview sizing defect. No Firefox, Safari, physical mobile-device, screen-reader
 or real hardware qualification is claimed. Small diagram labels need zoom.
 
 GitHub Actions runs these checks on PRs and main and retains browser evidence for
-seven days. Consult the PR's actual checks for hosted results. The application
-has not been deployed.
+seven days. Consult the PR's actual checks for hosted results. Publishing is a
+separate action from building or opening a pull request.

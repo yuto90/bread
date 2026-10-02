@@ -11,7 +11,7 @@ import { buildPlayground } from '../scripts/build-playground.ts';
 const example = (name: string) => readFileSync(new URL(`../examples/${name}.bread`, import.meta.url), 'utf8');
 for (const [name, parts, nets, warnings] of [
   ['blink', 3, 3, 0], ['three-leds', 7, 7, 0], ['6-leds', 13, 13, 0],
-  ['temperature-alarm', 8, 8, 1], ['blink-d12', 3, 3, 0], ['blink-reversed', 3, 3, 1]
+  ['temperature-alarm', 8, 8, 1], ['diode-led', 4, 4, 1], ['diode-decoupling', 5, 5, 1], ['blink-d12', 3, 3, 0], ['blink-reversed', 3, 3, 1]
 ] as const) {
   test(`Playground ${name} uses the existing core and preserves exact SVG bytes`, () => {
     const source = example(name), result = compilePreview({ source, revision: 4 });
@@ -58,7 +58,7 @@ test('Static build contains actual samples, browser ESM core, and no Node-only C
   try {
     await buildPlayground(output);
     const samples = JSON.parse(readFileSync(join(output, 'samples.json'), 'utf8'));
-    assert.deepEqual(samples.map((sample: { id: string }) => sample.id), ['blink', 'three-leds', '6-leds', 'temperature-alarm']);
+    assert.deepEqual(samples.map((sample: { id: string }) => sample.id), ['blink', 'three-leds', '6-leds', 'temperature-alarm', 'diode-led', 'diode-decoupling']);
     for (const sample of samples) assert.equal(sample.source, example(sample.id));
     const files = readdirSync(output, { recursive: true }).filter((path): path is string => typeof path === 'string');
     assert.ok(!files.includes('src/cli.js'));

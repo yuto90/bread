@@ -1,0 +1,101 @@
+{
+  "metrics": [
+    {
+      "sample": "diode-led",
+      "parts": 4,
+      "pins": 6,
+      "nets": 4,
+      "unoJumpers": 2,
+      "links": 2,
+      "occupiedHoles": 12,
+      "crossings": 1,
+      "violations": [],
+      "placement": {
+        "leads": {
+          "led.A": "C2",
+          "led.K": "C3",
+          "limit.1": "J2",
+          "limit.2": "J6",
+          "diode.A": "H3",
+          "diode.K": "H7"
+        },
+        "jumpers": [
+          {
+            "pin": "uno.GND1",
+            "hole": "A3"
+          },
+          {
+            "pin": "uno.D13",
+            "hole": "F2"
+          }
+        ],
+        "links": [
+          {
+            "fromHole": "F3",
+            "toHole": "F6"
+          },
+          {
+            "fromHole": "E2",
+            "toHole": "F7"
+          }
+        ]
+      }
+    },
+    {
+      "sample": "diode-decoupling",
+      "parts": 5,
+      "pins": 8,
+      "nets": 5,
+      "unoJumpers": 3,
+      "links": 3,
+      "occupiedHoles": 17,
+      "crossings": 1,
+      "violations": [],
+      "placement": {
+        "leads": {
+          "led.A": "C2",
+          "led.K": "C3",
+          "limit.1": "J2",
+          "limit.2": "J6",
+          "diode.A": "H3",
+          "diode.K": "H7",
+          "bypass.1": "C8",
+          "bypass.2": "C9"
+        },
+        "jumpers": [
+          {
+            "pin": "uno.5V",
+            "hole": "A8"
+          },
+          {
+            "pin": "uno.GND1",
+            "hole": "B3"
+          },
+          {
+            "pin": "uno.D13",
+            "hole": "F2"
+          }
+        ],
+        "links": [
+          {
+            "fromHole": "A3",
+            "toHole": "A9"
+          },
+          {
+            "fromHole": "F3",
+            "toHole": "F6"
+          },
+          {
+            "fromHole": "E2",
+            "toHole": "F7"
+          }
+        ]
+      }
+    }
+  ],
+  "unsupportedPlacementStressFirstFailure": {
+    "bypassCount": 23,
+    "code": "E_PLACEMENT_CAPACITY",
+    "message": "No free footprint for cap9 on the fixed 300-hole board"
+  }
+}

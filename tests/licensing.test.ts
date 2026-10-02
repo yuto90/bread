@@ -27,3 +27,13 @@ for (const [name, hash] of Object.entries(baseline)) {
     if (name !== 'temperature-alarm') assert.equal(createHash('sha256').update(drawing).digest('hex'), hash);
   });
 }
+for (const name of ['diode-led', 'diode-decoupling']) {
+  test(`New component export retains self-contained artwork attribution for ${name}`, () => {
+    const svg = render(readFileSync(new URL(`../examples/${name}.bread`, import.meta.url), 'utf8'));
+    assert.match(svg, /id="bread-illustration-license"/);
+    assert.ok(svg.includes('https://creativecommons.org/licenses/by-sa/4.0/'));
+    assert.ok(svg.includes(illustrationAttribution.sourceUrl));
+    assert.ok(svg.includes(illustrationAttribution.sourceSha256));
+    assert.ok(svg.includes(illustrationAttribution.modifications));
+  });
+}

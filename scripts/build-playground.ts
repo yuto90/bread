@@ -29,7 +29,7 @@ export async function buildPlayground(destination = join(root, 'dist/playground'
   for (const file of ['LICENSE', 'LICENSES/README.md', 'LICENSES/CC-BY-SA-4.0.txt']) {
     await copyFile(join(root, file), join(output, file));
   }
-  const samples = await Promise.all(['blink', 'three-leds', '6-leds', 'temperature-alarm'].map(async id => ({
+  const samples = await Promise.all(['blink', 'three-leds', '6-leds', 'temperature-alarm', 'diode-led', 'diode-decoupling'].map(async id => ({
     id, filename: `${id}.bread`, source: await readFile(join(root, 'examples', `${id}.bread`), 'utf8')
   })));
   await writeFile(join(output, 'samples.json'), JSON.stringify(samples, null, 2) + '\n');

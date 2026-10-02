@@ -1,0 +1,13 @@
+bread 0.1
+title "Diode + LED · polarity study"
+
+part uno: arduino-uno-r3
+part limit: resistor [value=220ohm]
+part diode: diode-1n4148
+part led: led-5mm-red
+
+// 1N4148 black band identifies K; the resistor limits this series branch.
+uno.D13 -- limit.1
+limit.2 -- diode.A
+diode.K -- led.A
+led.K -- uno.GND

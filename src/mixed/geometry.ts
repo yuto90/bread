@@ -1,5 +1,8 @@
 import type {Part,Placement} from '../model.ts';
 import {holePoint} from '../breadboard/index.ts';
+import {diode} from '../../parts/diode-1n4148/index.ts';
+import {capacitor} from '../../parts/capacitor-c315c104/index.ts';
+const unitsPerMm=16/2.54;
 export type Box={left:number;right:number;top:number;bottom:number};
 export const overlaps=(a:Box,b:Box)=>a.left<b.right&&b.left<a.right&&a.top<b.bottom&&b.top<a.bottom;
 export function candidates(p:Part):Record<string,string>[] {
@@ -11,6 +14,8 @@ export function candidates(p:Part):Record<string,string>[] {
   else if(p.type==='dht22-bare')pins={'1':`${col}${row}`,'2':`${col}${row+1}`,'3':`${col}${row+2}`,'4':`${col}${row+3}`};
   else if(p.type==='potentiometer-3296w')pins={'1':`${col}${row}`,'2':`${col}${row+1}`,'3':`${col}${row+2}`};
   else if(p.type==='resistor')pins={'1':`${col}${row}`,'2':`${col}${row+4}`};
+  else if(p.type===diode.type)pins={A:`${col}${row}`,K:`${col}${row+diode.rowSpan}`};
+  else if(p.type===capacitor.type)pins={'1':`${col}${row}`,'2':`${col}${row+capacitor.rowSpan}`};
   else pins={A:`${col}${row}`,K:`${col}${row+1}`};
   if(Object.values(pins).some(h=>Number(h.slice(1))>30))continue;
   const leads=Object.fromEntries(Object.entries(pins).map(([pin,hole])=>[`${p.id}.${pin}`,hole]));
@@ -28,6 +33,10 @@ export function envelope(p:Part,physical:Placement):Box{
  if(p.type==='dht22-bare')return {left:x-86,right:x+4,top:y+24-86,bottom:y+24+86};
  if(p.type==='potentiometer-3296w')return {left:x-17,right:x+17,top:y-15,bottom:end+15};
  if(p.type==='resistor')return {left:x-9,right:x+9,top:y-4,bottom:end+4};
+ // Include each entire formed lead span; manufacturer maximum bodies plus a
+ // 0.5mm planar margin per side. This reserves space, not guaranteed assembly.
+ if(p.type===diode.type){const half=(diode.bodyDiameterMm/2+0.5)*unitsPerMm;return {left:x-half,right:x+half,top:y-4,bottom:end+4};}
+ if(p.type===capacitor.type){const halfX=(capacitor.bodyThicknessMm/2+0.5)*unitsPerMm,halfY=(capacitor.bodyLengthMm/2+0.5)*unitsPerMm,mid=(y+end)/2;return {left:x-halfX,right:x+halfX,top:mid-halfY,bottom:mid+halfY};}
  return {left:x-18,right:x+18,top:y-4,bottom:end+70};
 }
 export function footprintMatches(p:Part,physical:Placement):boolean {

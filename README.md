@@ -27,10 +27,10 @@ node src/cli.ts render examples/blink.bread -o dist/blink.svg
 npm run playground
 ```
 
-Open **http://127.0.0.1:4173** for the editor, four sample circuits, live errors,
+Open **http://127.0.0.1:4173** for the editor, six sample circuits, live errors,
 zoom and SVG downloads. The loopback server serves static files; compilation runs
 inside a browser Worker. Edits stay in the tab and are lost on reload or sample
-replacement. Restart the server after source changes. No public app is deployed.
+replacement. Restart the server after source changes.
 
 ```bread
 bread 0.1
@@ -57,17 +57,22 @@ A visual wire crossing is not a junction.
 | One resistor and LED | Uno D12 or D13, 220Ω resistor, red 5mm LED, GND1 |
 | Three to six LED branches | Contiguous Uno pins starting at D13 and descending, one 220Ω resistor per LED, shared GND1 |
 | Mixed-parts family | The [temperature-alarm wiring topology](examples/temperature-alarm.bread): Uno, LED, three resistors, formed-lead button, 10kΩ trimmer, bare DHT22; qualified pin reassignment and equivalent connections |
+| Diode LED family | Uno D12/D13 → 220Ω resistor → Vishay 1N4148 A/K → red LED A/K → GND1; optionally one KEMET C315C104 100nF capacitor between 5V/GND1 |
 
 All use the same fixed 30-row, 300-hole breadboard without power rails. **Two LED
 branches are unsupported; seven through twelve exceed placement capacity.**
 Supported parts do not imply arbitrary combinations. Six-LED routing has 17
-crossings and the mixed example 8 (down from 27). See the [bounded routing results](docs/mixed-routing.md). The missing historical layout improvement
+crossings, the mixed example 8 (down from 27), and each new diode sample 1.
+See the [bounded routing results](docs/mixed-routing.md) and
+[component models, datasheet provenance and evidence](docs/component-expansion.md).
+The missing historical layout improvement
 has not been incorporated. See the [full support contract](docs/supported-scope.md).
 
 Validation checks modeled connectivity, hole/socket uniqueness, footprint rules
 and component envelopes. It does not calculate voltage, current or temperature,
 simulate firmware or prove safe assembly. Button lead forming and DHT22 clearance
-still need physical verification. Beginner comprehension has not been measured.
+still need physical verification, as do the 1N4148 leads formed to 10.16mm.
+Beginner comprehension has not been measured.
 
 ## Develop and verify
 

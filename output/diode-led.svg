@@ -1,0 +1,480 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1320" viewBox="0 0 1720 1320" role="img" aria-labelledby="title desc"><title id="title">Diode + LED · polarity study</title><desc id="desc">Connection-only diode/LED wiring with optional non-polar 100nF bypass. Formed axial diode leads. No simulation or hardware validation.</desc><metadata id="bread-proof">{&quot;physical&quot;:[[&quot;diode.A&quot;,&quot;limit.2&quot;],[&quot;diode.K&quot;,&quot;led.A&quot;],[&quot;led.K&quot;,&quot;uno.GND1&quot;],[&quot;limit.1&quot;,&quot;uno.D13&quot;]],&quot;placement&quot;:{&quot;leads&quot;:{&quot;led.A&quot;:&quot;C2&quot;,&quot;led.K&quot;:&quot;C3&quot;,&quot;limit.1&quot;:&quot;J2&quot;,&quot;limit.2&quot;:&quot;J6&quot;,&quot;diode.A&quot;:&quot;H3&quot;,&quot;diode.K&quot;:&quot;H7&quot;},&quot;jumpers&quot;:[{&quot;pin&quot;:&quot;uno.GND1&quot;,&quot;hole&quot;:&quot;A3&quot;},{&quot;pin&quot;:&quot;uno.D13&quot;,&quot;hole&quot;:&quot;F2&quot;}],&quot;links&quot;:[{&quot;fromHole&quot;:&quot;F3&quot;,&quot;toHole&quot;:&quot;F6&quot;},{&quot;fromHole&quot;:&quot;E2&quot;,&quot;toHole&quot;:&quot;F7&quot;}]},&quot;illustration&quot;:{&quot;license&quot;:&quot;CC-BY-SA-4.0&quot;,&quot;licenseUrl&quot;:&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot;,&quot;creator&quot;:&quot;Arduino&quot;,&quot;sourceTitle&quot;:&quot;UNO R3 A000066 / UNO-TH Rev3e&quot;,&quot;sourceUrl&quot;:&quot;https://github.com/arduino/docs-content/blob/bdd379bc55bd1ec9449c87235640cedde017f751/content/hardware/uno/boards/uno-rev3/downloads/A000066-cad-files.zip&quot;,&quot;sourceSha256&quot;:&quot;532b306cb153846eafc0ca9fe991d7a4dfa0c52dcefafa2efeaebf4b845ec820&quot;,&quot;adapter&quot;:&quot;Bread contributors&quot;,&quot;modifications&quot;:&quot;Simplified board outline; selected and scaled socket geometry; USB-left orientation; original component illustrations, connection overlays and labels.&quot;,&quot;notice&quot;:&quot;No Arduino endorsement. Illustration provided without warranty. This notice does not license independently supplied circuit text or firmware.&quot;}}</metadata><metadata id="bread-illustration-license"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"><cc:Work rdf:about=""><dc:title>Bread wiring illustration</dc:title><dc:creator>Arduino: UNO R3 A000066 / UNO-TH Rev3e; adapted by Bread contributors</dc:creator><dc:source rdf:resource="https://github.com/arduino/docs-content/blob/bdd379bc55bd1ec9449c87235640cedde017f751/content/hardware/uno/boards/uno-rev3/downloads/A000066-cad-files.zip"/><cc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/><dc:description>Simplified board outline; selected and scaled socket geometry; USB-left orientation; original component illustrations, connection overlays and labels. No Arduino endorsement. Illustration provided without warranty. This notice does not license independently supplied circuit text or firmware.</dc:description></cc:Work></rdf:RDF></metadata><g font-family="Arial,Helvetica,sans-serif"><rect width="1720" height="1320" fill="#f5f7f6"/>
+<text x="45" y="45" font-size="13" fill="#56716a" letter-spacing="2">BREAD / MIXED-PARTS WIRING</text>
+<text x="45" y="85" font-size="31" fill="#173b35" font-weight="700">Diode + LED · polarity study</text>
+<text x="45" y="115" font-size="18" fill="#27433e" >1N4148 diode · red LED · optional 100nF ceramic bypass</text>
+<text x="1255" y="65" font-size="17" fill="#236247" font-weight="700">4 STATIC NETS VERIFIED</text>
+<path data-route-body="uno" d="M70,310 L521.612,310 L532.28,320.668 L532.28,400.678 L550.06,418.458 L550.06,647.82 L532.28,665.6 L532.28,683.38 L70,683.38 Z" fill="#087e89" stroke="#05616a" stroke-width="3"/>
+<rect x="50" y="390" width="85" height="100" rx="5" fill="#a9babd" stroke="#627a7b"/><rect x="300" y="550" width="165" height="65" rx="4" fill="#253438"/>
+<text x="270" y="465" font-size="36" fill="white" font-weight="700">UNO R3</text>
+<text x="270" y="497" font-size="13" fill="#d7efeb" >TOP VIEW · USB LEFT</text>
+<rect x="194.572" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-SCL" x="198.572" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="201.572" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 201.572 355.78)">SCL</text>
+<rect x="212.352" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-SDA" x="216.352" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="219.352" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 219.352 355.78)">SDA</text>
+<rect x="230.132" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-AREF" x="234.132" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="237.132" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 237.132 355.78)">AREF</text>
+<rect x="247.912" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-GND1" x="251.912" y="324.78" width="6" height="6" fill="#f9dda0"/>
+<text x="254.912" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 254.912 355.78)">GND1</text>
+<rect x="265.692" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D13" x="269.692" y="324.78" width="6" height="6" fill="#f9dda0"/>
+<text x="272.692" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 272.692 355.78)">D13</text>
+<rect x="283.472" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D12" x="287.472" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="290.472" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 290.472 355.78)">D12</text>
+<rect x="301.252" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D11" x="305.252" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="308.252" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 308.252 355.78)">D11</text>
+<rect x="319.032" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D10" x="323.032" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="326.032" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 326.032 355.78)">D10</text>
+<rect x="336.812" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D9" x="340.812" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="343.812" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 343.812 355.78)">D9</text>
+<rect x="354.592" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D8" x="358.592" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="361.592" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 361.592 355.78)">D8</text>
+<rect x="383.04" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D7" x="387.04" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="390.04" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 390.04 355.78)">D7</text>
+<rect x="400.82" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D6" x="404.82" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="407.82" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 407.82 355.78)">D6</text>
+<rect x="418.6" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D5" x="422.6" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="425.6" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 425.6 355.78)">D5</text>
+<rect x="436.38" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D4" x="440.38" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="443.38" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 443.38 355.78)">D4</text>
+<rect x="454.16" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D3" x="458.16" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="461.16" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 461.16 355.78)">D3</text>
+<rect x="471.94" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D2" x="475.94" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="478.94" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 478.94 355.78)">D2</text>
+<rect x="489.72" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D1" x="493.72" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="496.72" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 496.72 355.78)">D1</text>
+<rect x="507.5" y="318.78" width="14" height="18" fill="#263537"/><rect id="uno-D0" x="511.5" y="324.78" width="6" height="6" fill="#121d20"/>
+<text x="514.5" y="355.78" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 514.5 355.78)">D0</text>
+<rect x="258.58" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-NC" x="262.58" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="265.58" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 265.58 647.6)">NC</text>
+<rect x="276.36" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-IOREF" x="280.36" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="283.36" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 283.36 647.6)">IOREF</text>
+<rect x="294.14" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-RESET" x="298.14" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="301.14" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 301.14 647.6)">RESET</text>
+<rect x="311.92" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-3V3" x="315.92" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="318.92" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 318.92 647.6)">3V3</text>
+<rect x="329.7" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-5V" x="333.7" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="336.7" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 336.7 647.6)">5V</text>
+<rect x="347.48" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-GND2" x="351.48" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="354.48" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 354.48 647.6)">GND2</text>
+<rect x="365.26" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-GND3" x="369.26" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="372.26" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 372.26 647.6)">GND3</text>
+<rect x="383.04" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-VIN" x="387.04" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="390.04" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 390.04 647.6)">VIN</text>
+<rect x="418.6" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A0" x="422.6" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="425.6" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 425.6 647.6)">A0</text>
+<rect x="436.38" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A1" x="440.38" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="443.38" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 443.38 647.6)">A1</text>
+<rect x="454.16" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A2" x="458.16" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="461.16" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 461.16 647.6)">A2</text>
+<rect x="471.94" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A3" x="475.94" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="478.94" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 478.94 647.6)">A3</text>
+<rect x="489.72" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A4" x="493.72" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="496.72" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 496.72 647.6)">A4</text>
+<rect x="507.5" y="656.6" width="14" height="18" fill="#263537"/><rect id="uno-A5" x="511.5" y="662.6" width="6" height="6" fill="#121d20"/>
+<text x="514.5" y="647.6" font-size="10" fill="white" text-anchor="middle" transform="rotate(-60 514.5 647.6)">A5</text>
+<rect x="725" y="220" width="425" height="815" rx="14" fill="#e1e7e3" stroke="#b5c6bd" stroke-width="2"/><rect x="745" y="240" width="385" height="775" rx="8" fill="#fbfcf8"/><rect x="908" y="255" width="28" height="740" rx="5" fill="#d4ddd7"/>
+<rect id="hole-A1" x="787" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>A1</title></rect>
+<rect id="hole-B1" x="811" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>B1</title></rect>
+<rect id="hole-C1" x="835" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>C1</title></rect>
+<rect id="hole-D1" x="859" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>D1</title></rect>
+<rect id="hole-E1" x="883" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>E1</title></rect>
+<rect id="hole-F1" x="955" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>F1</title></rect>
+<rect id="hole-G1" x="979" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>G1</title></rect>
+<rect id="hole-H1" x="1003" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>H1</title></rect>
+<rect id="hole-I1" x="1027" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>I1</title></rect>
+<rect id="hole-J1" x="1051" y="267" width="6" height="6" rx="1" fill="#8b9990"><title>J1</title></rect>
+<rect id="hole-A2" x="787" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>A2</title></rect>
+<rect id="hole-B2" x="811" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>B2</title></rect>
+<rect id="hole-C2" x="835" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>C2</title></rect>
+<rect id="hole-D2" x="859" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>D2</title></rect>
+<rect id="hole-E2" x="883" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>E2</title></rect>
+<rect id="hole-F2" x="955" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>F2</title></rect>
+<rect id="hole-G2" x="979" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>G2</title></rect>
+<rect id="hole-H2" x="1003" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>H2</title></rect>
+<rect id="hole-I2" x="1027" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>I2</title></rect>
+<rect id="hole-J2" x="1051" y="291" width="6" height="6" rx="1" fill="#8b9990"><title>J2</title></rect>
+<rect id="hole-A3" x="787" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>A3</title></rect>
+<rect id="hole-B3" x="811" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>B3</title></rect>
+<rect id="hole-C3" x="835" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>C3</title></rect>
+<rect id="hole-D3" x="859" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>D3</title></rect>
+<rect id="hole-E3" x="883" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>E3</title></rect>
+<rect id="hole-F3" x="955" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>F3</title></rect>
+<rect id="hole-G3" x="979" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>G3</title></rect>
+<rect id="hole-H3" x="1003" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>H3</title></rect>
+<rect id="hole-I3" x="1027" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>I3</title></rect>
+<rect id="hole-J3" x="1051" y="315" width="6" height="6" rx="1" fill="#8b9990"><title>J3</title></rect>
+<rect id="hole-A4" x="787" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>A4</title></rect>
+<rect id="hole-B4" x="811" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>B4</title></rect>
+<rect id="hole-C4" x="835" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>C4</title></rect>
+<rect id="hole-D4" x="859" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>D4</title></rect>
+<rect id="hole-E4" x="883" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>E4</title></rect>
+<rect id="hole-F4" x="955" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>F4</title></rect>
+<rect id="hole-G4" x="979" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>G4</title></rect>
+<rect id="hole-H4" x="1003" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>H4</title></rect>
+<rect id="hole-I4" x="1027" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>I4</title></rect>
+<rect id="hole-J4" x="1051" y="339" width="6" height="6" rx="1" fill="#8b9990"><title>J4</title></rect>
+<rect id="hole-A5" x="787" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>A5</title></rect>
+<rect id="hole-B5" x="811" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>B5</title></rect>
+<rect id="hole-C5" x="835" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>C5</title></rect>
+<rect id="hole-D5" x="859" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>D5</title></rect>
+<rect id="hole-E5" x="883" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>E5</title></rect>
+<rect id="hole-F5" x="955" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>F5</title></rect>
+<rect id="hole-G5" x="979" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>G5</title></rect>
+<rect id="hole-H5" x="1003" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>H5</title></rect>
+<rect id="hole-I5" x="1027" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>I5</title></rect>
+<rect id="hole-J5" x="1051" y="363" width="6" height="6" rx="1" fill="#8b9990"><title>J5</title></rect>
+<rect id="hole-A6" x="787" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>A6</title></rect>
+<rect id="hole-B6" x="811" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>B6</title></rect>
+<rect id="hole-C6" x="835" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>C6</title></rect>
+<rect id="hole-D6" x="859" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>D6</title></rect>
+<rect id="hole-E6" x="883" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>E6</title></rect>
+<rect id="hole-F6" x="955" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>F6</title></rect>
+<rect id="hole-G6" x="979" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>G6</title></rect>
+<rect id="hole-H6" x="1003" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>H6</title></rect>
+<rect id="hole-I6" x="1027" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>I6</title></rect>
+<rect id="hole-J6" x="1051" y="387" width="6" height="6" rx="1" fill="#8b9990"><title>J6</title></rect>
+<rect id="hole-A7" x="787" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>A7</title></rect>
+<rect id="hole-B7" x="811" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>B7</title></rect>
+<rect id="hole-C7" x="835" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>C7</title></rect>
+<rect id="hole-D7" x="859" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>D7</title></rect>
+<rect id="hole-E7" x="883" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>E7</title></rect>
+<rect id="hole-F7" x="955" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>F7</title></rect>
+<rect id="hole-G7" x="979" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>G7</title></rect>
+<rect id="hole-H7" x="1003" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>H7</title></rect>
+<rect id="hole-I7" x="1027" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>I7</title></rect>
+<rect id="hole-J7" x="1051" y="411" width="6" height="6" rx="1" fill="#8b9990"><title>J7</title></rect>
+<rect id="hole-A8" x="787" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>A8</title></rect>
+<rect id="hole-B8" x="811" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>B8</title></rect>
+<rect id="hole-C8" x="835" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>C8</title></rect>
+<rect id="hole-D8" x="859" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>D8</title></rect>
+<rect id="hole-E8" x="883" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>E8</title></rect>
+<rect id="hole-F8" x="955" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>F8</title></rect>
+<rect id="hole-G8" x="979" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>G8</title></rect>
+<rect id="hole-H8" x="1003" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>H8</title></rect>
+<rect id="hole-I8" x="1027" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>I8</title></rect>
+<rect id="hole-J8" x="1051" y="435" width="6" height="6" rx="1" fill="#8b9990"><title>J8</title></rect>
+<rect id="hole-A9" x="787" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>A9</title></rect>
+<rect id="hole-B9" x="811" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>B9</title></rect>
+<rect id="hole-C9" x="835" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>C9</title></rect>
+<rect id="hole-D9" x="859" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>D9</title></rect>
+<rect id="hole-E9" x="883" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>E9</title></rect>
+<rect id="hole-F9" x="955" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>F9</title></rect>
+<rect id="hole-G9" x="979" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>G9</title></rect>
+<rect id="hole-H9" x="1003" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>H9</title></rect>
+<rect id="hole-I9" x="1027" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>I9</title></rect>
+<rect id="hole-J9" x="1051" y="459" width="6" height="6" rx="1" fill="#8b9990"><title>J9</title></rect>
+<rect id="hole-A10" x="787" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>A10</title></rect>
+<rect id="hole-B10" x="811" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>B10</title></rect>
+<rect id="hole-C10" x="835" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>C10</title></rect>
+<rect id="hole-D10" x="859" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>D10</title></rect>
+<rect id="hole-E10" x="883" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>E10</title></rect>
+<rect id="hole-F10" x="955" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>F10</title></rect>
+<rect id="hole-G10" x="979" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>G10</title></rect>
+<rect id="hole-H10" x="1003" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>H10</title></rect>
+<rect id="hole-I10" x="1027" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>I10</title></rect>
+<rect id="hole-J10" x="1051" y="483" width="6" height="6" rx="1" fill="#8b9990"><title>J10</title></rect>
+<rect id="hole-A11" x="787" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>A11</title></rect>
+<rect id="hole-B11" x="811" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>B11</title></rect>
+<rect id="hole-C11" x="835" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>C11</title></rect>
+<rect id="hole-D11" x="859" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>D11</title></rect>
+<rect id="hole-E11" x="883" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>E11</title></rect>
+<rect id="hole-F11" x="955" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>F11</title></rect>
+<rect id="hole-G11" x="979" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>G11</title></rect>
+<rect id="hole-H11" x="1003" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>H11</title></rect>
+<rect id="hole-I11" x="1027" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>I11</title></rect>
+<rect id="hole-J11" x="1051" y="507" width="6" height="6" rx="1" fill="#8b9990"><title>J11</title></rect>
+<rect id="hole-A12" x="787" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>A12</title></rect>
+<rect id="hole-B12" x="811" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>B12</title></rect>
+<rect id="hole-C12" x="835" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>C12</title></rect>
+<rect id="hole-D12" x="859" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>D12</title></rect>
+<rect id="hole-E12" x="883" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>E12</title></rect>
+<rect id="hole-F12" x="955" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>F12</title></rect>
+<rect id="hole-G12" x="979" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>G12</title></rect>
+<rect id="hole-H12" x="1003" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>H12</title></rect>
+<rect id="hole-I12" x="1027" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>I12</title></rect>
+<rect id="hole-J12" x="1051" y="531" width="6" height="6" rx="1" fill="#8b9990"><title>J12</title></rect>
+<rect id="hole-A13" x="787" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>A13</title></rect>
+<rect id="hole-B13" x="811" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>B13</title></rect>
+<rect id="hole-C13" x="835" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>C13</title></rect>
+<rect id="hole-D13" x="859" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>D13</title></rect>
+<rect id="hole-E13" x="883" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>E13</title></rect>
+<rect id="hole-F13" x="955" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>F13</title></rect>
+<rect id="hole-G13" x="979" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>G13</title></rect>
+<rect id="hole-H13" x="1003" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>H13</title></rect>
+<rect id="hole-I13" x="1027" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>I13</title></rect>
+<rect id="hole-J13" x="1051" y="555" width="6" height="6" rx="1" fill="#8b9990"><title>J13</title></rect>
+<rect id="hole-A14" x="787" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>A14</title></rect>
+<rect id="hole-B14" x="811" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>B14</title></rect>
+<rect id="hole-C14" x="835" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>C14</title></rect>
+<rect id="hole-D14" x="859" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>D14</title></rect>
+<rect id="hole-E14" x="883" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>E14</title></rect>
+<rect id="hole-F14" x="955" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>F14</title></rect>
+<rect id="hole-G14" x="979" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>G14</title></rect>
+<rect id="hole-H14" x="1003" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>H14</title></rect>
+<rect id="hole-I14" x="1027" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>I14</title></rect>
+<rect id="hole-J14" x="1051" y="579" width="6" height="6" rx="1" fill="#8b9990"><title>J14</title></rect>
+<rect id="hole-A15" x="787" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>A15</title></rect>
+<rect id="hole-B15" x="811" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>B15</title></rect>
+<rect id="hole-C15" x="835" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>C15</title></rect>
+<rect id="hole-D15" x="859" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>D15</title></rect>
+<rect id="hole-E15" x="883" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>E15</title></rect>
+<rect id="hole-F15" x="955" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>F15</title></rect>
+<rect id="hole-G15" x="979" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>G15</title></rect>
+<rect id="hole-H15" x="1003" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>H15</title></rect>
+<rect id="hole-I15" x="1027" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>I15</title></rect>
+<rect id="hole-J15" x="1051" y="603" width="6" height="6" rx="1" fill="#8b9990"><title>J15</title></rect>
+<rect id="hole-A16" x="787" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>A16</title></rect>
+<rect id="hole-B16" x="811" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>B16</title></rect>
+<rect id="hole-C16" x="835" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>C16</title></rect>
+<rect id="hole-D16" x="859" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>D16</title></rect>
+<rect id="hole-E16" x="883" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>E16</title></rect>
+<rect id="hole-F16" x="955" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>F16</title></rect>
+<rect id="hole-G16" x="979" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>G16</title></rect>
+<rect id="hole-H16" x="1003" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>H16</title></rect>
+<rect id="hole-I16" x="1027" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>I16</title></rect>
+<rect id="hole-J16" x="1051" y="627" width="6" height="6" rx="1" fill="#8b9990"><title>J16</title></rect>
+<rect id="hole-A17" x="787" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>A17</title></rect>
+<rect id="hole-B17" x="811" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>B17</title></rect>
+<rect id="hole-C17" x="835" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>C17</title></rect>
+<rect id="hole-D17" x="859" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>D17</title></rect>
+<rect id="hole-E17" x="883" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>E17</title></rect>
+<rect id="hole-F17" x="955" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>F17</title></rect>
+<rect id="hole-G17" x="979" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>G17</title></rect>
+<rect id="hole-H17" x="1003" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>H17</title></rect>
+<rect id="hole-I17" x="1027" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>I17</title></rect>
+<rect id="hole-J17" x="1051" y="651" width="6" height="6" rx="1" fill="#8b9990"><title>J17</title></rect>
+<rect id="hole-A18" x="787" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>A18</title></rect>
+<rect id="hole-B18" x="811" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>B18</title></rect>
+<rect id="hole-C18" x="835" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>C18</title></rect>
+<rect id="hole-D18" x="859" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>D18</title></rect>
+<rect id="hole-E18" x="883" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>E18</title></rect>
+<rect id="hole-F18" x="955" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>F18</title></rect>
+<rect id="hole-G18" x="979" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>G18</title></rect>
+<rect id="hole-H18" x="1003" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>H18</title></rect>
+<rect id="hole-I18" x="1027" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>I18</title></rect>
+<rect id="hole-J18" x="1051" y="675" width="6" height="6" rx="1" fill="#8b9990"><title>J18</title></rect>
+<rect id="hole-A19" x="787" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>A19</title></rect>
+<rect id="hole-B19" x="811" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>B19</title></rect>
+<rect id="hole-C19" x="835" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>C19</title></rect>
+<rect id="hole-D19" x="859" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>D19</title></rect>
+<rect id="hole-E19" x="883" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>E19</title></rect>
+<rect id="hole-F19" x="955" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>F19</title></rect>
+<rect id="hole-G19" x="979" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>G19</title></rect>
+<rect id="hole-H19" x="1003" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>H19</title></rect>
+<rect id="hole-I19" x="1027" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>I19</title></rect>
+<rect id="hole-J19" x="1051" y="699" width="6" height="6" rx="1" fill="#8b9990"><title>J19</title></rect>
+<rect id="hole-A20" x="787" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>A20</title></rect>
+<rect id="hole-B20" x="811" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>B20</title></rect>
+<rect id="hole-C20" x="835" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>C20</title></rect>
+<rect id="hole-D20" x="859" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>D20</title></rect>
+<rect id="hole-E20" x="883" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>E20</title></rect>
+<rect id="hole-F20" x="955" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>F20</title></rect>
+<rect id="hole-G20" x="979" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>G20</title></rect>
+<rect id="hole-H20" x="1003" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>H20</title></rect>
+<rect id="hole-I20" x="1027" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>I20</title></rect>
+<rect id="hole-J20" x="1051" y="723" width="6" height="6" rx="1" fill="#8b9990"><title>J20</title></rect>
+<rect id="hole-A21" x="787" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>A21</title></rect>
+<rect id="hole-B21" x="811" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>B21</title></rect>
+<rect id="hole-C21" x="835" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>C21</title></rect>
+<rect id="hole-D21" x="859" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>D21</title></rect>
+<rect id="hole-E21" x="883" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>E21</title></rect>
+<rect id="hole-F21" x="955" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>F21</title></rect>
+<rect id="hole-G21" x="979" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>G21</title></rect>
+<rect id="hole-H21" x="1003" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>H21</title></rect>
+<rect id="hole-I21" x="1027" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>I21</title></rect>
+<rect id="hole-J21" x="1051" y="747" width="6" height="6" rx="1" fill="#8b9990"><title>J21</title></rect>
+<rect id="hole-A22" x="787" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>A22</title></rect>
+<rect id="hole-B22" x="811" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>B22</title></rect>
+<rect id="hole-C22" x="835" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>C22</title></rect>
+<rect id="hole-D22" x="859" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>D22</title></rect>
+<rect id="hole-E22" x="883" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>E22</title></rect>
+<rect id="hole-F22" x="955" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>F22</title></rect>
+<rect id="hole-G22" x="979" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>G22</title></rect>
+<rect id="hole-H22" x="1003" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>H22</title></rect>
+<rect id="hole-I22" x="1027" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>I22</title></rect>
+<rect id="hole-J22" x="1051" y="771" width="6" height="6" rx="1" fill="#8b9990"><title>J22</title></rect>
+<rect id="hole-A23" x="787" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>A23</title></rect>
+<rect id="hole-B23" x="811" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>B23</title></rect>
+<rect id="hole-C23" x="835" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>C23</title></rect>
+<rect id="hole-D23" x="859" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>D23</title></rect>
+<rect id="hole-E23" x="883" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>E23</title></rect>
+<rect id="hole-F23" x="955" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>F23</title></rect>
+<rect id="hole-G23" x="979" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>G23</title></rect>
+<rect id="hole-H23" x="1003" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>H23</title></rect>
+<rect id="hole-I23" x="1027" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>I23</title></rect>
+<rect id="hole-J23" x="1051" y="795" width="6" height="6" rx="1" fill="#8b9990"><title>J23</title></rect>
+<rect id="hole-A24" x="787" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>A24</title></rect>
+<rect id="hole-B24" x="811" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>B24</title></rect>
+<rect id="hole-C24" x="835" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>C24</title></rect>
+<rect id="hole-D24" x="859" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>D24</title></rect>
+<rect id="hole-E24" x="883" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>E24</title></rect>
+<rect id="hole-F24" x="955" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>F24</title></rect>
+<rect id="hole-G24" x="979" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>G24</title></rect>
+<rect id="hole-H24" x="1003" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>H24</title></rect>
+<rect id="hole-I24" x="1027" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>I24</title></rect>
+<rect id="hole-J24" x="1051" y="819" width="6" height="6" rx="1" fill="#8b9990"><title>J24</title></rect>
+<rect id="hole-A25" x="787" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>A25</title></rect>
+<rect id="hole-B25" x="811" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>B25</title></rect>
+<rect id="hole-C25" x="835" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>C25</title></rect>
+<rect id="hole-D25" x="859" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>D25</title></rect>
+<rect id="hole-E25" x="883" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>E25</title></rect>
+<rect id="hole-F25" x="955" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>F25</title></rect>
+<rect id="hole-G25" x="979" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>G25</title></rect>
+<rect id="hole-H25" x="1003" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>H25</title></rect>
+<rect id="hole-I25" x="1027" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>I25</title></rect>
+<rect id="hole-J25" x="1051" y="843" width="6" height="6" rx="1" fill="#8b9990"><title>J25</title></rect>
+<rect id="hole-A26" x="787" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>A26</title></rect>
+<rect id="hole-B26" x="811" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>B26</title></rect>
+<rect id="hole-C26" x="835" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>C26</title></rect>
+<rect id="hole-D26" x="859" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>D26</title></rect>
+<rect id="hole-E26" x="883" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>E26</title></rect>
+<rect id="hole-F26" x="955" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>F26</title></rect>
+<rect id="hole-G26" x="979" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>G26</title></rect>
+<rect id="hole-H26" x="1003" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>H26</title></rect>
+<rect id="hole-I26" x="1027" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>I26</title></rect>
+<rect id="hole-J26" x="1051" y="867" width="6" height="6" rx="1" fill="#8b9990"><title>J26</title></rect>
+<rect id="hole-A27" x="787" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>A27</title></rect>
+<rect id="hole-B27" x="811" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>B27</title></rect>
+<rect id="hole-C27" x="835" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>C27</title></rect>
+<rect id="hole-D27" x="859" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>D27</title></rect>
+<rect id="hole-E27" x="883" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>E27</title></rect>
+<rect id="hole-F27" x="955" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>F27</title></rect>
+<rect id="hole-G27" x="979" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>G27</title></rect>
+<rect id="hole-H27" x="1003" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>H27</title></rect>
+<rect id="hole-I27" x="1027" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>I27</title></rect>
+<rect id="hole-J27" x="1051" y="891" width="6" height="6" rx="1" fill="#8b9990"><title>J27</title></rect>
+<rect id="hole-A28" x="787" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>A28</title></rect>
+<rect id="hole-B28" x="811" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>B28</title></rect>
+<rect id="hole-C28" x="835" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>C28</title></rect>
+<rect id="hole-D28" x="859" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>D28</title></rect>
+<rect id="hole-E28" x="883" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>E28</title></rect>
+<rect id="hole-F28" x="955" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>F28</title></rect>
+<rect id="hole-G28" x="979" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>G28</title></rect>
+<rect id="hole-H28" x="1003" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>H28</title></rect>
+<rect id="hole-I28" x="1027" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>I28</title></rect>
+<rect id="hole-J28" x="1051" y="915" width="6" height="6" rx="1" fill="#8b9990"><title>J28</title></rect>
+<rect id="hole-A29" x="787" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>A29</title></rect>
+<rect id="hole-B29" x="811" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>B29</title></rect>
+<rect id="hole-C29" x="835" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>C29</title></rect>
+<rect id="hole-D29" x="859" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>D29</title></rect>
+<rect id="hole-E29" x="883" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>E29</title></rect>
+<rect id="hole-F29" x="955" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>F29</title></rect>
+<rect id="hole-G29" x="979" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>G29</title></rect>
+<rect id="hole-H29" x="1003" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>H29</title></rect>
+<rect id="hole-I29" x="1027" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>I29</title></rect>
+<rect id="hole-J29" x="1051" y="939" width="6" height="6" rx="1" fill="#8b9990"><title>J29</title></rect>
+<rect id="hole-A30" x="787" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>A30</title></rect>
+<rect id="hole-B30" x="811" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>B30</title></rect>
+<rect id="hole-C30" x="835" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>C30</title></rect>
+<rect id="hole-D30" x="859" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>D30</title></rect>
+<rect id="hole-E30" x="883" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>E30</title></rect>
+<rect id="hole-F30" x="955" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>F30</title></rect>
+<rect id="hole-G30" x="979" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>G30</title></rect>
+<rect id="hole-H30" x="1003" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>H30</title></rect>
+<rect id="hole-I30" x="1027" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>I30</title></rect>
+<rect id="hole-J30" x="1051" y="963" width="6" height="6" rx="1" fill="#8b9990"><title>J30</title></rect>
+<text x="790" y="255" font-size="12" fill="#597568" text-anchor="middle">A</text>
+<text x="814" y="255" font-size="12" fill="#597568" text-anchor="middle">B</text>
+<text x="838" y="255" font-size="12" fill="#597568" text-anchor="middle">C</text>
+<text x="862" y="255" font-size="12" fill="#597568" text-anchor="middle">D</text>
+<text x="886" y="255" font-size="12" fill="#597568" text-anchor="middle">E</text>
+<text x="958" y="255" font-size="12" fill="#597568" text-anchor="middle">F</text>
+<text x="982" y="255" font-size="12" fill="#597568" text-anchor="middle">G</text>
+<text x="1006" y="255" font-size="12" fill="#597568" text-anchor="middle">H</text>
+<text x="1030" y="255" font-size="12" fill="#597568" text-anchor="middle">I</text>
+<text x="1054" y="255" font-size="12" fill="#597568" text-anchor="middle">J</text>
+<text x="767" y="274" font-size="12" fill="#597568" text-anchor="end">1</text>
+<text x="767" y="298" font-size="12" fill="#597568" text-anchor="end">2</text>
+<text x="767" y="322" font-size="12" fill="#597568" text-anchor="end">3</text>
+<text x="767" y="346" font-size="12" fill="#597568" text-anchor="end">4</text>
+<text x="767" y="370" font-size="12" fill="#597568" text-anchor="end">5</text>
+<text x="767" y="394" font-size="12" fill="#597568" text-anchor="end">6</text>
+<text x="767" y="418" font-size="12" fill="#597568" text-anchor="end">7</text>
+<text x="767" y="442" font-size="12" fill="#597568" text-anchor="end">8</text>
+<text x="767" y="466" font-size="12" fill="#597568" text-anchor="end">9</text>
+<text x="767" y="490" font-size="12" fill="#597568" text-anchor="end">10</text>
+<text x="767" y="514" font-size="12" fill="#597568" text-anchor="end">11</text>
+<text x="767" y="538" font-size="12" fill="#597568" text-anchor="end">12</text>
+<text x="767" y="562" font-size="12" fill="#597568" text-anchor="end">13</text>
+<text x="767" y="586" font-size="12" fill="#597568" text-anchor="end">14</text>
+<text x="767" y="610" font-size="12" fill="#597568" text-anchor="end">15</text>
+<text x="767" y="634" font-size="12" fill="#597568" text-anchor="end">16</text>
+<text x="767" y="658" font-size="12" fill="#597568" text-anchor="end">17</text>
+<text x="767" y="682" font-size="12" fill="#597568" text-anchor="end">18</text>
+<text x="767" y="706" font-size="12" fill="#597568" text-anchor="end">19</text>
+<text x="767" y="730" font-size="12" fill="#597568" text-anchor="end">20</text>
+<text x="767" y="754" font-size="12" fill="#597568" text-anchor="end">21</text>
+<text x="767" y="778" font-size="12" fill="#597568" text-anchor="end">22</text>
+<text x="767" y="802" font-size="12" fill="#597568" text-anchor="end">23</text>
+<text x="767" y="826" font-size="12" fill="#597568" text-anchor="end">24</text>
+<text x="767" y="850" font-size="12" fill="#597568" text-anchor="end">25</text>
+<text x="767" y="874" font-size="12" fill="#597568" text-anchor="end">26</text>
+<text x="767" y="898" font-size="12" fill="#597568" text-anchor="end">27</text>
+<text x="767" y="922" font-size="12" fill="#597568" text-anchor="end">28</text>
+<text x="767" y="946" font-size="12" fill="#597568" text-anchor="end">29</text>
+<text x="767" y="970" font-size="12" fill="#597568" text-anchor="end">30</text>
+<path d="M1006 318 V414" stroke="#879494" stroke-width="3"/><rect data-route-body="diode" x="997.7322834645669" y="349.93700787401576" width="16.53543307086614" height="32.125984251968504" rx="5" fill="#d88e54" stroke="#705435"/>
+<rect x="997.7322834645669" y="375.06299212598424" width="16.53543307086614" height="5" fill="#252c2b"/>
+<text x="989" y="322" font-size="11" fill="#27433e" >A</text>
+<text x="989" y="418" font-size="11" fill="#27433e" >K</text>
+<text x="1020.2677165354331" y="371" font-size="14" fill="#654d28" font-weight="700">1</text>
+<path d="M838 294 H828 V373 M838 318 H848 V373" fill="none" stroke="#879494" stroke-width="3"/><path data-route-body="led" d="M820 396 V373 A18 18 0 0 1 856 373 V396Z" fill="#e8484e" stroke="#97383a" stroke-width="2"/>
+<text x="838" y="386" font-size="15" fill="white" text-anchor="middle">2</text>
+<text x="811" y="306" font-size="11" fill="#a33539" >A</text>
+<text x="854" y="330" font-size="11" fill="#a33539" >K</text>
+<path d="M1054 294 V390" stroke="#8d9a9a" stroke-width="4"/><rect data-route-body="limit" x="1044" y="314" width="20" height="56" rx="7" fill="#e0c58a" stroke="#997f48"/>
+<rect x="1044" y="325" width="20" height="5" fill="#c74035"/>
+<rect x="1044" y="337" width="20" height="5" fill="#c74035"/>
+<rect x="1044" y="349" width="20" height="5" fill="#8a5d39"/>
+<text x="1069" y="347" font-size="14" fill="#654d28" font-weight="700">3</text>
+<g data-wire="1"><title>uno.GND1 → A3</title><path d="M254.912 327.78 L254.912 302 L790 302 L790 318" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M254.912 327.78 L254.912 302 L790 302 L790 318" fill="none" stroke="#34424a" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="254.912" cy="327.78" r="5" fill="white" stroke="#34424a" stroke-width="2"/>
+<circle cx="790" cy="318" r="5" fill="white" stroke="#34424a" stroke-width="2"/>
+</g>
+<g data-wire="2"><title>uno.D13 → F2</title><path d="M272.692 327.78 L272.692 286 L958 286 L958 294" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M272.692 327.78 L272.692 286 L958 286 L958 294" fill="none" stroke="#a4609c" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="272.692" cy="327.78" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
+<circle cx="958" cy="294" r="5" fill="white" stroke="#a4609c" stroke-width="2"/>
+</g>
+<g data-wire="3"><title>F3 → F6</title><path d="M958 318 L958 390" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M958 318 L958 390" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="958" cy="318" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
+<circle cx="958" cy="390" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
+</g>
+<g data-wire="4"><title>E2 → F7</title><path d="M886 294 L886 414 L958 414" fill="none" stroke="#f5f7f6" stroke-width="8" stroke-linejoin="round"/><path d="M886 294 L886 414 L958 414" fill="none" stroke="#627b75" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="886" cy="294" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
+<circle cx="958" cy="414" r="5" fill="white" stroke="#627b75" stroke-width="2"/>
+</g>
+<circle data-lead="led.A" data-hole="C2" cx="838" cy="294" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>led.A → C2</title></circle>
+<circle data-lead="led.K" data-hole="C3" cx="838" cy="318" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>led.K → C3</title></circle>
+<circle data-lead="limit.1" data-hole="J2" cx="1054" cy="294" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>limit.1 → J2</title></circle>
+<circle data-lead="limit.2" data-hole="J6" cx="1054" cy="390" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>limit.2 → J6</title></circle>
+<circle data-lead="diode.A" data-hole="H3" cx="1006" cy="318" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>diode.A → H3</title></circle>
+<circle data-lead="diode.K" data-hole="H7" cx="1006" cy="414" r="5.5" fill="white" stroke="#a65d49" stroke-width="2.5"><title>diode.K → H7</title></circle>
+<rect x="1200" y="160" width="475" height="1030" rx="14" fill="white" stroke="#d6e0d8"/>
+<text x="1225" y="198" font-size="18" fill="#416858" font-weight="700">INSERTION GUIDE</text>
+<text x="1225" y="230" font-size="17" fill="#173b35" font-weight="700">1. diode</text>
+<text x="1225" y="252" font-size="14" fill="#27433e" >Vishay 1N4148 · black band K</text>
+<text x="1225" y="274" font-size="14" fill="#62746d" >A→H3  K→H7</text>
+<text x="1225" y="292" font-size="12" fill="#27433e" >A = anode · K = cathode (black band)</text>
+<text x="1225" y="308" font-size="17" fill="#173b35" font-weight="700">2. led</text>
+<text x="1225" y="330" font-size="14" fill="#27433e" >red LED</text>
+<text x="1225" y="352" font-size="14" fill="#62746d" >A→C2  K→C3</text>
+<text x="1225" y="386" font-size="17" fill="#173b35" font-weight="700">3. limit</text>
+<text x="1225" y="408" font-size="14" fill="#27433e" >resistor 220ohm</text>
+<text x="1225" y="430" font-size="14" fill="#62746d" >1→J2  2→J6</text>
+<text x="1225" y="800" font-size="15" fill="#416858" font-weight="700">UNO JUMPERS</text>
+<text x="1225" y="825" font-size="15" fill="#27433e" >uno.GND1 → A3</text>
+<text x="1225" y="849" font-size="15" fill="#27433e" >uno.D13 → F2</text>
+<text x="1225" y="995" font-size="15" fill="#416858" font-weight="700">BREADBOARD JUMPERS</text>
+<text x="1225" y="1020" font-size="15" fill="#27433e" >F3 → F6</text>
+<text x="1443" y="1020" font-size="15" fill="#27433e" >E2 → F7</text>
+<text x="50" y="990" font-size="24" fill="#173b35" font-weight="700">Series diode + LED wiring study</text>
+<text x="50" y="1022" font-size="17" fill="#27433e" >D12/D13 → 220Ω → diode A/K → LED A/K → GND1.</text>
+<text x="50" y="1052" font-size="16" fill="#27433e" >1N4148 black band is K. Capacitor 1 / 2 are non-polar.</text>
+<text x="50" y="1080" font-size="16" fill="#27433e" >100nF bypasses, when present, connect only between 5V and GND1.</text>
+<text x="50" y="1108" font-size="16" fill="#27433e" >Wire crossings are not junctions. Follow the insertion guide.</text>
+<text x="50" y="1143" font-size="16" fill="#94692c" >Axial diode leads modeled formed to 10.16mm; assembly untested.</text>
+<text x="50" y="1171" font-size="15" fill="#667e70" >Body envelopes use manufacturer maxima; contact and wire clearance need checking.</text>
+<rect x="45" y="1220" width="1630" height="62" rx="12" fill="#e4ede6"/>
+<text x="65" y="1246" font-size="17" fill="#335848" font-weight="700">4 static nets · 4 components · 4 jumpers · one fixed 300-hole board</text>
+<text x="65" y="1270" font-size="15" fill="#27433e" >Wiring consistency only — no current, voltage, charging, switching or hardware simulation.</text>
+<text x="45" y="1305" font-size="11" fill="#748479" >Arduino Uno CAD-derived geometry · illustration CC BY-SA 4.0 · sources and assumptions in component-expansion report</text>
+</g></svg>
