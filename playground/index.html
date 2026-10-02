@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f0">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob:; worker-src 'self'; object-src 'none'; base-uri 'none'; connect-src 'self'">
-  <meta name="description" content="Turn connection-only Bread code into an electrically checked breadboard wiring diagram, directly in your browser.">
+  <meta name="description" content="Turn connection-only Bread code into an connectivity-checked breadboard wiring diagram, directly in your browser.">
   <title>Bread Playground</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./style.css">
@@ -21,7 +21,7 @@
   <main>
     <section class="intro" aria-labelledby="page-title">
       <div><p class="eyebrow">LESS GUESSWORK. MORE MAKING.</p><h1 id="page-title">Connections in.<br class="mobile-break"> Wiring out.</h1><p class="lede">Describe what connects. Bread takes care of the placement.</p></div>
-      <div class="intro-note"><span class="note-mark">↳</span><p>From a few lines of code<br>to your next breadboard.</p></div>
+      <div class="intro-note"><span class="note-mark">→</span><p>From a few lines of code<br>to your next breadboard.</p></div>
     </section>
     <section class="workbench" aria-label="Bread editor and wiring preview">
       <div class="sample-bar">
@@ -58,7 +58,7 @@
     </section>
     <details class="syntax-guide"><summary>A little syntax goes a long way <span>Quick reference + current limits</span></summary><div class="guide-content"><div><h3>Describe connections only</h3><p>Begin with <code>bread 0.1</code>, declare a part with <code>part led: led-5mm-red</code>, then connect its pins with <code>led.K -- uno.GND</code>. Use <code>//</code> for comments.</p></div><div><h3>A deliberately small playground</h3><p>Try one or three to six resistor/LED branches, or the mixed-parts wiring study. Arbitrary circuits and manual layout are not supported. Six-LED and mixed diagrams can have crossing wires; a crossing is not a junction.</p></div></div></details>
   </main>
-  <footer class="site-footer"><span>bread. <span class="muted">A connection-only experiment.</span></span><span>No account. No upload. Just connections.</span></footer>
+  <footer class="site-footer"><span>bread. <span class="muted">Connection-only wiring.</span></span><span>No account. No upload. Just connections.</span></footer>
   <noscript><p class="noscript">Enable JavaScript to use the editor and live wiring preview. The command-line Bread renderer is also available in this repository.</p></noscript>
 </body>
 </html>

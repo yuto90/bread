@@ -1,0 +1,263 @@
+{
+  "source": "package-lock.json; declared package licenses, not a legal audit",
+  "packages": [
+    {
+      "path": "node_modules/@asamuzakjp/css-color",
+      "version": "7.1.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@asamuzakjp/dom-selector",
+      "version": "9.2.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@bramus/specificity",
+      "version": "2.4.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/color-helpers",
+      "version": "6.1.2",
+      "license": "MIT-0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/css-calc",
+      "version": "3.4.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/css-color-parser",
+      "version": "4.2.5",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/css-parser-algorithms",
+      "version": "4.0.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/css-syntax-patches-for-csstree",
+      "version": "1.1.15",
+      "license": "MIT-0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@csstools/css-tokenizer",
+      "version": "4.0.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@exodus/bytes",
+      "version": "1.16.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@playwright/test",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@types/node",
+      "version": "24.10.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/bidi-js",
+      "version": "1.1.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/css-tree",
+      "version": "3.2.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/data-urls",
+      "version": "7.0.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/data-urls/node_modules/whatwg-url",
+      "version": "16.0.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/decimal.js",
+      "version": "10.6.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/entities",
+      "version": "8.1.0",
+      "license": "BSD-2-Clause",
+      "dev": true
+    },
+    {
+      "path": "node_modules/html-encoding-sniffer",
+      "version": "7.0.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/is-potential-custom-element-name",
+      "version": "1.0.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/jsdom",
+      "version": "30.1.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/lru-cache",
+      "version": "11.5.3",
+      "license": "BlueOak-1.0.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/mdn-data",
+      "version": "2.27.1",
+      "license": "CC0-1.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/parse5",
+      "version": "8.0.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/playwright",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/playwright-core",
+      "version": "1.63.0",
+      "license": "Apache-2.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/punycode",
+      "version": "2.3.1",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/require-from-string",
+      "version": "2.0.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/saxes",
+      "version": "6.0.0",
+      "license": "ISC",
+      "dev": true
+    },
+    {
+      "path": "node_modules/source-map-js",
+      "version": "1.2.2",
+      "license": "BSD-3-Clause",
+      "dev": true
+    },
+    {
+      "path": "node_modules/tldts",
+      "version": "7.4.16",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/tldts-core",
+      "version": "7.4.16",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/tough-cookie",
+      "version": "6.0.2",
+      "license": "BSD-3-Clause",
+      "dev": true
+    },
+    {
+      "path": "node_modules/tr46",
+      "version": "6.0.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/typescript",
+      "version": "5.9.3",
+      "license": "Apache-2.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/undici",
+      "version": "8.11.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/undici-types",
+      "version": "7.16.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/w3c-xmlserializer",
+      "version": "6.0.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/webidl-conversions",
+      "version": "8.0.1",
+      "license": "BSD-2-Clause",
+      "dev": true
+    },
+    {
+      "path": "node_modules/whatwg-mimetype",
+      "version": "5.0.0",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/whatwg-url",
+      "version": "17.1.2",
+      "license": "MIT",
+      "dev": true
+    },
+    {
+      "path": "node_modules/xml-name-validator",
+      "version": "5.0.0",
+      "license": "Apache-2.0",
+      "dev": true
+    },
+    {
+      "path": "node_modules/xmlchars",
+      "version": "2.2.0",
+      "license": "MIT",
+      "dev": true
+    }
+  ]
+}
