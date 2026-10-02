@@ -31,6 +31,11 @@ Workers migration, new project or URL change is needed.
    workflow explicitly deploys `--branch=main`; another configured production
    branch would cause a preview instead. Keep the existing Direct Upload project.
    No Cloudflare GitHub app installation or Cloudflare build command is needed.
+   An owner can inspect the production branch with `wrangler pages project list`.
+   Direct Upload has no dashboard production-branch controls; if it differs, an
+   owner must explicitly update `production_branch` through the
+   [Update Project API](https://developers.cloudflare.com/pages/get-started/direct-upload/#production-branch-configuration)
+   before enabling this workflow. This workflow does not alter project settings.
 5. Review and merge this PR when ready. With the secret configured, that merge
    will trigger the first production upload. To defer publication, leave the
    secret unset: verification runs, but deployment fails with a clear message.
