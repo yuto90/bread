@@ -25,6 +25,10 @@ export async function buildPlayground(destination = join(root, 'dist/playground'
   for (const file of ['index.html', 'style.css', 'icon.svg']) {
     await copyFile(join(root, 'playground', file), join(output, file));
   }
+  await mkdir(join(output, 'LICENSES'), { recursive: true });
+  for (const file of ['LICENSE', 'LICENSES/README.md', 'LICENSES/CC-BY-SA-4.0.txt']) {
+    await copyFile(join(root, file), join(output, file));
+  }
   const samples = await Promise.all(['blink', 'three-leds', '6-leds', 'temperature-alarm'].map(async id => ({
     id, filename: `${id}.bread`, source: await readFile(join(root, 'examples', `${id}.bread`), 'utf8')
   })));

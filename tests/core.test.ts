@@ -81,7 +81,9 @@ test('Comments, CRLF, BOM, strings and escaped XML are handled safely',()=>{
   const title=source.replace('"Arduino LED"','"A < B & \\\"quoted\\\" // text"');
   assert.equal(parse(title).title,'A < B & "quoted" // text');
   assert.match(render(title),/A &lt; B &amp; &quot;quoted&quot; \/\/ text/);
-  assert.doesNotMatch(render(title),/<script|<image|<foreignObject|https?:\/\/(?!www.w3.org)/);
+  // Attribution URLs in inert metadata are not fetched resources.
+  const drawing = render(title).replace(/<metadata\b[^>]*>[\s\S]*?<\/metadata>/g, '');
+  assert.doesNotMatch(drawing,/<script|<image|<foreignObject|https?:\/\/(?!www.w3.org)/);
 });
 test('Every strip has five holes, all 60 strips isolated, gap not connected',()=>{
   const groups=new Map<string,number>();

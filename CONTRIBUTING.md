@@ -1,8 +1,9 @@
 # Developing Bread
 
-Software licensing is awaiting a maintainer decision. This guide describes the
-engineering workflow; it does not grant a software license or set contribution
-licensing terms. Do not add third-party source or assets without provenance.
+Original software is MIT-licensed; derived geometry and illustrations use CC BY-SA
+4.0. Follow [the file-level scope](LICENSES/README.md). Contributions must identify
+third-party source/assets and their provenance; do not assume the root MIT license
+covers them.
 
 Use Node 24.19.0 and the committed npm lockfile. Install development dependencies
 with `npm ci --ignore-scripts`, then run `npm run verify`. If a sandbox's default

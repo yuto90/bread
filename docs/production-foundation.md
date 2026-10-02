@@ -20,7 +20,7 @@ these were local results, not a CI pass. No protection was overridden.
 - Read-only, SHA-pinned GitHub Actions workflow for PRs and main, running type,
   core/CLI/DOM, deterministic build and real Chromium browser checks.
 - Product README, supported-scope contract, contributor workflow and dependency /
-  hardware provenance review. Software license remains unchosen.
+  hardware provenance review. Approved split: original code MIT, derived geometry/illustrations CC BY-SA 4.0.
 - Browser tests for all four samples, actual module Worker execution under CSP,
   image decoding, exact downloaded SVG bytes, error line navigation, stale preview
   and disabled download, capacity error, recovery, warnings, zoom/Fit and Tab exit.
@@ -57,7 +57,7 @@ as a hosted CI result; the PR checks are the source of truth for hosted status.
 
 ## Remaining work and release gates
 
-1. Maintainer software-license decision and final derived-asset attribution audit.
+1. Maintain the approved file-level license boundaries and review new third-party assets.
 2. Routing benchmark and improvement: crossing counts, obstacle clearance,
    determinism and explicit failure/capacity behavior across a bounded corpus.
 3. Real component fit/assembly validation, especially formed button leads and
@@ -68,3 +68,23 @@ as a hosted CI result; the PR checks are the source of truth for hosted status.
 No simulation, firmware, AI service, deployment, package publication or new PR
 merge belongs to this milestone. The historical unpushed layout improvement is
 absent. Further merging requires maintainer approval.
+
+## Approved licensing implementation
+
+Original software is MIT-licensed, with the copyright holder matching existing
+Git author attribution (sagara yuto / yuto90). Arduino-derived numerical geometry
+and outline are isolated in `parts/arduino-uno-r3/geometry.ts` under CC-BY-SA-4.0.
+`LICENSES/README.md` maps files and outputs; full MIT and CC license texts are
+included in the repository and static build. Both SVG families embed source,
+license, creator, checksum and modifications, with RDF license metadata.
+
+All six SVG fixtures were regenerated for attribution only. Regression hashes
+prove the drawing bytes outside metadata remain identical to d5b14e6. Existing
+PNG images still show the same drawings and are covered by the asset notices.
+Generated artwork is not blanket MIT; independently supplied circuit DSL and
+firmware are not relicensed merely by rendering. No release or deployment occurs.
+
+Licensing verification: **132 tests**, strict typecheck, two identical **36-file**
+static builds, and all **four real-browser scenarios** pass locally. The six new
+attribution regressions preserve every drawing outside metadata. Hosted CI status
+is recorded on PR #2 for the final commit.

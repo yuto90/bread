@@ -28,5 +28,6 @@
     "typescript": "5.9.3"
   },
   "description": "Connection-only wiring DSL with independent physical netlist verification",
-  "packageManager": "npm@11.9.0"
+  "packageManager": "npm@11.9.0",
+  "license": "SEE LICENSE IN LICENSES/README.md"
 }

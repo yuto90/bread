@@ -103,9 +103,9 @@ test('Unsupported branch count and non-shared ground fail explicitly',()=>{
   rejects(()=>compile(source.replace('led3.K -- uno.GND','led3.K -- uno.GND2')),'E_UNSUPPORTED_CIRCUIT');
   rejects(()=>compile(source.replace('uno.D11','uno.D10')),'E_UNSUPPORTED_CIRCUIT');
 });
-test('Original one-LED SVG bytes remain unchanged from reviewed commit',()=>{
+test('Original one-LED drawing stays unchanged outside license metadata',()=>{
   const single=readFileSync(new URL('../examples/blink.bread',import.meta.url),'utf8');
-  assert.equal(createHash('sha256').update(render(single)).digest('hex'),'135d94378d17d393e5239b0c6547c45af9ae1b79404d0f93b2ba8d6f2f277d43');
+  assert.equal(createHash('sha256').update(render(single).replace(/<metadata\b[^>]*>[\s\S]*?<\/metadata>\n?/g,'')).digest('hex'),'2e6684cd6ad7e83657c461ed6c317dc7189ae8bea34e0ad950e94f0c099e066e');
 });
 test('Three-branch CLI check/render and separate-process determinism',()=>{
   const cli=new URL('../src/cli.ts',import.meta.url).pathname,input=new URL('../examples/three-leds.bread',import.meta.url).pathname;

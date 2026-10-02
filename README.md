@@ -10,8 +10,9 @@ rendering.
 
 Bread is in early product development. The checked circuit families below work;
 arbitrary circuits, certified mechanical fit and electrical behavior are not
-supported claims. Software licensing is pending the maintainer's choice, so this
-is **not yet an open-source licensed release**. See [licensing review](docs/licensing-review.md).
+supported claims. Original software is **MIT-licensed**; Arduino-derived geometry and generated
+illustrations are **CC BY-SA 4.0**. See the [file-level license scope](LICENSES/README.md)
+and [output obligations](docs/licensing-review.md). No package release is published.
 
 ![Bread wiring output](output/blink.svg)
 
