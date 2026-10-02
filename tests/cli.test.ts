@@ -7,6 +7,23 @@ import { join } from 'node:path';
 const source=readFileSync(new URL('../examples/blink.bread',import.meta.url),'utf8');
 const cli=new URL('../src/cli.ts',import.meta.url).pathname;
 const run=(...args:string[])=>spawnSync(process.execPath,[cli,...args],{encoding:'utf8'});
+test('CLI rejects XML-invalid titles before touching output and accepts emoji',()=>{
+  const dir=mkdtempSync(join(tmpdir(),'bread-title-'));
+  try {
+    const input=join(dir,'input.bread'), output=join(dir,'output.svg');
+    writeFileSync(output,'existing output');
+    for(const title of ['\uffff','\ufffe','\ud800','\udfff']) {
+      writeFileSync(input,source.replace('title "Arduino LED"',`title ${JSON.stringify(title)}`));
+      const result=run('render',input,'-o',output);
+      assert.equal(result.status,1); assert.match(result.stderr,/E_SVG_TEXT line 3/);
+      assert.equal(readFileSync(output,'utf8'),'existing output');
+      assert.equal(run('check',input).status,1);
+    }
+    writeFileSync(input,source.replace('Arduino LED','Bread 🍞'));
+    assert.equal(run('render',input,'-o',output).status,0);
+    assert.match(readFileSync(output,'utf8'),/Bread 🍞/);
+  } finally {rmSync(dir,{recursive:true,force:true});}
+});
 test('CLI check/render, process determinism, failure status and atomic output',()=>{
   const dir=mkdtempSync(join(tmpdir(),'bread-test-'));
   try {

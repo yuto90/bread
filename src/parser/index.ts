@@ -27,6 +27,7 @@ export function parse(source: string): Circuit {
       if (title) fail('E_SYNTAX', 'Only one title is allowed', line);
       try { circuit.title = JSON.parse(m[1]); } catch { fail('E_SYNTAX', 'Invalid quoted title', line); }
       if (circuit.title.length > 64 || /[\x00-\x1f\x7f]/.test(circuit.title)) fail('E_SYNTAX', 'Title must be at most 64 printable characters', line);
+      if (/[\uD800-\uDFFF\uFFFE\uFFFF]/u.test(circuit.title)) fail('E_SVG_TEXT', 'Title contains a character XML cannot represent', line);
       title = true;
     } else if ((m = text.match(/^part\s+([A-Za-z][A-Za-z0-9_]{0,23}):\s*([a-z][a-z0-9-]*)(?:\s+\[([^\]]*)\])?$/))) {
       let value: string | undefined;
