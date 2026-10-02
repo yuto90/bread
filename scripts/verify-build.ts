@@ -11,7 +11,13 @@ try {
   const files = async (dir: string) => (await readdir(dir, { recursive: true, withFileTypes: true }))
     .filter(entry => entry.isFile()).map(entry => join(entry.parentPath, entry.name).slice(dir.length + 1)).sort();
   const paths = await files(first);
-  assert.ok(paths.length > 0);
+  for (const required of ['index.html', '_headers', 'LICENSE', 'LICENSES/README.md', 'LICENSES/CC-BY-SA-4.0.txt', 'docs/index.html', 'docs/ja/index.html']) {
+    assert.ok(paths.includes(required), `Missing deployment file: ${required}`);
+  }
+  for (const path of ['LICENSE', 'LICENSES/README.md', 'LICENSES/CC-BY-SA-4.0.txt']) {
+    assert.deepEqual(await readFile(join(first, path)), await readFile(new URL(`../${path}`, import.meta.url)), path);
+  }
+  assert.deepEqual(await readFile(join(first, '_headers')), await readFile(new URL('../playground/_headers', import.meta.url)));
   assert.deepEqual(paths, await files(second));
   for (const path of paths) assert.deepEqual(await readFile(join(first, path)), await readFile(join(second, path)), path);
   console.log(`PASS: ${paths.length} static build files are byte-identical across two clean builds`);
