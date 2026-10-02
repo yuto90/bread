@@ -75,6 +75,11 @@ capacitors with `E_PLACEMENT_CAPACITY`. This measures this deterministic placer,
 not supported product capacity, routing success or physical board capacity.
 The public family accepts at most one capacitor.
 
+Reproduce the measurement record with
+`node scripts/measure-discrete.ts > docs/discrete-layout-evidence.json`.
+Regenerate the diagrams with the documented CLI `render` command and each
+example's path; the measurement script itself only reads inputs and prints JSON.
+
 Local verification used Node 24.19.0 and Chrome 154.0.8037.93 on macOS:
 
 - Strict typecheck and 194 core/CLI/DOM tests passed. These include literal
