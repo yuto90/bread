@@ -55,8 +55,8 @@ server serves files only; all compilation happens in the browser.
 This extends published commit `c8c7045c6625c3af1d92c4854e14c5d10d62a9b0`.
 The separate unpushed layout improvement
 `efbd29b9299545a4f44c6d24091952bed94eab68` was not recoverable from the remote and
-is **not included**. Existing layout limitations, including mixed-part wire
-crossings, are preserved. The foundation keeps part definitions, placement and routing behavior unchanged.
+is **not included**. The later [bounded mixed-routing change](mixed-routing.md) reduces crossings while
+retaining physical placement. Capacity and mechanical limits still apply.
 
 Supported topology is deliberately bounded: one branch or three to six contiguous
 D13-down LED/resistor branches, plus the shipped mixed-parts wiring study. Two

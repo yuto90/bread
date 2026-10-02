@@ -1,5 +1,10 @@
 # Mixed-parts temperature-alarm wiring study
 
+The report below records the original implementation. Current artifacts now use
+the [bounded router](mixed-routing.md): 8 crossings, with the same placement and
+physical nets. Historical 27-crossing counts and old test totals below refer to
+the original baseline.
+
 Added three component types and generated an actual connection-only wiring preview: a four-leg pushbutton, 10kΩ trim potentiometer and bare four-pin DHT22. An Uno, LED, 220Ω series resistor, 10kΩ DHT pull-up and 10kΩ button pull-down complete the example. This is **intended alarm wiring**, not working alarm firmware, simulation, hardware testing or a safety validation.
 
 ## Deliverables

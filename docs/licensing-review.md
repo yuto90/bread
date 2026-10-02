@@ -22,8 +22,9 @@ supply source links, checksum, transformations and attribution. No upstream CAD
 archive, EAGLE library collection, logo or manufacturer illustration is vendored.
 
 Both renderer families embed self-contained source/license URLs, creator/work,
-modification notice and license metadata in exported SVG. All six stored SVGs
-were regenerated; their graphics outside metadata are unchanged. Output PNGs
+modification notice and license metadata in exported SVG. Licensing commit bc981d9 regenerated all six stored SVGs without changing their
+graphics outside metadata. The later [mixed-routing change](mixed-routing.md)
+intentionally updates the mixed diagram while preserving its attribution. Output PNGs
 and Playground screenshots contain these illustrations and carry the same asset
 terms through the repository's attribution documents.
 

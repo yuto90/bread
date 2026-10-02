@@ -61,7 +61,7 @@ A visual wire crossing is not a junction.
 All use the same fixed 30-row, 300-hole breadboard without power rails. **Two LED
 branches are unsupported; seven through twelve exceed placement capacity.**
 Supported parts do not imply arbitrary combinations. Six-LED routing has 17
-crossings and the mixed example 27. The missing historical layout improvement
+crossings and the mixed example 8 (down from 27). See the [bounded routing results](docs/mixed-routing.md). The missing historical layout improvement
 has not been incorporated. See the [full support contract](docs/supported-scope.md).
 
 Validation checks modeled connectivity, hole/socket uniqueness, footprint rules

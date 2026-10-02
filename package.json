@@ -19,7 +19,8 @@
     "build": "npm run build:playground",
     "test:browser": "playwright test",
     "verify:build": "node scripts/verify-build.ts",
-    "verify": "npm run typecheck && npm test && npm run verify:build"
+    "verify": "npm run typecheck && npm test && npm run verify:build",
+    "benchmark:routing": "node scripts/measure-routing.ts"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",
