@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+import { unoGeometry } from '../../parts/arduino-uno-r3/geometry.ts';
+import { illustrationAttribution, illustrationMetadata } from '../attribution.ts';
 import {renderMixed} from '../mixed/renderer.ts';
 import type { Placement, Resolved } from '../model.ts';
 import { branchesOf } from '../model.ts';
@@ -22,14 +25,15 @@ export function renderSvg(c: Resolved, p: Placement): string {
   if(c.mixed) return renderMixed(c,p,actual);
   const branches = branchesOf(c), multi = branches.length >= 3, large = branches.length > 3;
   const wires = [...route(p),...routeLinks(p)], signal = branches.map(b=>b.signal.split('.')[1]).join('/');
-  const outline = [[0,53.34],[64.516,53.34],[66.04,51.816],[66.04,40.386],[68.58,37.846],[68.58,5.08],[66.04,2.54],[66.04,0],[0,0]].map(([x,y],i)=>{
+  const outline = unoGeometry.outline.map(([x,y],i)=>{
     const pt=fromCad(x,y); return `${i?'L':'M'} ${pt.x} ${pt.y}`;
   }).join(' ')+' Z';
   const out: string[] = [
     '<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="940" viewBox="0 0 1440 940" role="img" aria-labelledby="title description">',
     `<title id="title">${esc(c.title)}</title>`,
     `<desc id="description">Uno ${signal} ${multi ? 'each connects through its own 220 ohm resistor and red LED to shared GND1.' : 'connects through a 220 ohm resistor and red LED to GND1.'} Breadboard insertion locations and LED polarity are labeled. ${esc(c.warnings.join(' '))}</desc>`,
-    `<metadata id="bread-proof">${esc(JSON.stringify({ version: '0.1.0', logical: expected, physical: actual, placement: p, license: 'CC BY-SA 4.0', attribution: 'Board geometry derived from Arduino UNO-TH Rev3e / A000066. Artwork simplified, scaled and annotated by Bread.' }))}</metadata>`,
+    `<metadata id="bread-proof">${esc(JSON.stringify({ version: '0.1.0', logical: expected, physical: actual, placement: p, license: 'CC BY-SA 4.0', illustration: illustrationAttribution }))}</metadata>`,
+    illustrationMetadata(),
     '<defs><linearGradient id="resistor" x2="1" y2="0"><stop stop-color="#b99359"/><stop offset=".5" stop-color="#efd7a2"/><stop offset="1" stop-color="#b99359"/></linearGradient><radialGradient id="led"><stop stop-color="#ff9291"/><stop offset=".65" stop-color="#ee494a"/><stop offset="1" stop-color="#a3222e"/></radialGradient></defs>',
     '<g font-family="Arial, Helvetica, sans-serif">',
     '<rect width="1440" height="940" fill="#f5f7f6"/>',

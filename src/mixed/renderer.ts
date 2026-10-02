@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+import { unoGeometry } from '../../parts/arduino-uno-r3/geometry.ts';
+import { illustrationAttribution, illustrationMetadata } from '../attribution.ts';
 import type {Resolved,Placement,Netlist} from '../model.ts';
 import {upperHeader,lowerHeader,fromCad} from '../../parts/arduino-uno-r3/index.ts';
 import {holes} from '../breadboard/index.ts';
@@ -7,8 +10,8 @@ const esc=(s:string)=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;
 const text=(x:number,y:number,s:string,size=16,color='#27433e',more='')=>`<text x="${x}" y="${y}" font-size="${size}" fill="${color}" ${more}>${esc(s)}</text>`;
 export function renderMixed(c:Resolved,p:Placement,actual:Netlist):string{
  const wires=routeMixed(p),parts=c.parts.filter(x=>x.id!==c.uno).sort((a,b)=>a.type.localeCompare(b.type)||a.id.localeCompare(b.id));
- const out=[`<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1320" viewBox="0 0 1720 1320" role="img" aria-labelledby="title desc"><title id="title">${esc(c.title)}</title><desc id="desc">Connection-only mixed-parts wiring. Button released. Conditional formed button footprint. No alarm firmware or hardware validation.</desc><metadata>${esc(JSON.stringify({physical:actual,placement:p}))}</metadata><g font-family="Arial,Helvetica,sans-serif"><rect width="1720" height="1320" fill="#f5f7f6"/>`,text(45,45,'BREAD / MIXED-PARTS WIRING',13,'#56716a','letter-spacing="2"'),text(45,85,c.title,31,'#173b35','font-weight="700"'),text(45,115,'Pushbutton · 10kΩ trim potentiometer · bare 4-pin DHT22 · LED',18),text(1255,65,'8 STATIC NETS VERIFIED',17,'#236247','font-weight="700"')];
- const outline=[[0,53.34],[64.516,53.34],[66.04,51.816],[66.04,40.386],[68.58,37.846],[68.58,5.08],[66.04,2.54],[66.04,0],[0,0]].map(([x,y],i)=>{const p=fromCad(x,y);return `${i?'L':'M'}${p.x},${p.y+80}`}).join(' ')+' Z';
+ const out=[`<svg xmlns="http://www.w3.org/2000/svg" width="1720" height="1320" viewBox="0 0 1720 1320" role="img" aria-labelledby="title desc"><title id="title">${esc(c.title)}</title><desc id="desc">Connection-only mixed-parts wiring. Button released. Conditional formed button footprint. No alarm firmware or hardware validation.</desc><metadata id="bread-proof">${esc(JSON.stringify({physical:actual,placement:p,illustration:illustrationAttribution}))}</metadata>${illustrationMetadata()}<g font-family="Arial,Helvetica,sans-serif"><rect width="1720" height="1320" fill="#f5f7f6"/>`,text(45,45,'BREAD / MIXED-PARTS WIRING',13,'#56716a','letter-spacing="2"'),text(45,85,c.title,31,'#173b35','font-weight="700"'),text(45,115,'Pushbutton · 10kΩ trim potentiometer · bare 4-pin DHT22 · LED',18),text(1255,65,'8 STATIC NETS VERIFIED',17,'#236247','font-weight="700"')];
+ const outline=unoGeometry.outline.map(([x,y],i)=>{const p=fromCad(x,y);return `${i?'L':'M'}${p.x},${p.y+80}`}).join(' ')+' Z';
  out.push(`<path d="${outline}" fill="#087e89" stroke="#05616a" stroke-width="3"/>`,'<rect x="50" y="390" width="85" height="100" rx="5" fill="#a9babd" stroke="#627a7b"/><rect x="300" y="550" width="165" height="65" rx="4" fill="#253438"/>',text(270,465,'UNO R3',36,'white','font-weight="700"'),text(270,497,'TOP VIEW · USB LEFT',13,'#d7efeb'));
  for(const pin of [...upperHeader,...lowerHeader]){
   const pt=unoPoint(pin),top=upperHeader.includes(pin),active=p.jumpers.some(j=>j.pin===`${c.uno}.${pin}`);

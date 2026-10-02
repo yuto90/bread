@@ -16,6 +16,9 @@
     "tests/**/*.ts",
     "playground/**/*.ts",
     "scripts/build-playground.ts",
-    "scripts/serve-playground.ts"
+    "scripts/serve-playground.ts",
+    "scripts/verify-build.ts",
+    "playwright.config.ts",
+    "e2e/**/*.ts"
   ]
 }

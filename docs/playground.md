@@ -1,11 +1,11 @@
 # Bread Playground
 
 A local-only, static browser UI over Bread's existing parser, semantic resolver,
-placement, netlist verification, routing and SVG renderer. The core is unchanged.
+placement, netlist verification, routing and SVG renderer. The UI shares the CLI's checked core.
 
 ## Start
 
-Use **Node.js 24 or newer**:
+Use the tested **Node.js 24.19.0**:
 
 ```sh
 npm run playground
@@ -25,7 +25,7 @@ npm run build:playground
 The output is `dist/playground/`. Serve that directory over HTTP with a static
 server. Opening `index.html` via `file://` will not work reliably with ES modules,
 fetch and module workers. The Playground has not been deployed as a live site.
-Source publication is tracked in [Draft PR #1](https://github.com/yuto90/bread-poc/pull/1).
+The baseline was merged in [PR #1](https://github.com/yuto90/bread/pull/1).
 
 ## Included
 
@@ -56,8 +56,7 @@ This extends published commit `c8c7045c6625c3af1d92c4854e14c5d10d62a9b0`.
 The separate unpushed layout improvement
 `efbd29b9299545a4f44c6d24091952bed94eab68` was not recoverable from the remote and
 is **not included**. Existing layout limitations, including mixed-part wire
-crossings, are preserved. No existing CLI command, part definition, placement,
-routing or SVG-rendering implementation has changed.
+crossings, are preserved. The foundation keeps part definitions, placement and routing behavior unchanged.
 
 Supported topology is deliberately bounded: one branch or three to six contiguous
 D13-down LED/resistor branches, plus the shipped mixed-parts wiring study. Two
@@ -67,8 +66,8 @@ is a static wiring study, not a working temperature alarm; component fit and
 hardware behavior remain unverified.
 
 The Playground limits input to 32,768 characters. Titles containing XML-invalid
-lone surrogates or U+FFFE/U+FFFF are rejected at the browser adapter boundary with
-`E_SVG_TEXT`; the CLI core is not changed. SVG previews use Blob-backed `img`
+lone surrogates or U+FFFE/U+FFFF are rejected by the shared parser with
+`E_SVG_TEXT`, including CLI input. SVG previews use Blob-backed `img`
 elements, not user HTML inserted into the page. CSP limits scripts, workers and
 connections to the serving origin.
 
@@ -76,43 +75,24 @@ connections to the serving origin.
 
 ```sh
 npm ci --ignore-scripts
-npm run typecheck
-npm test
-npm run build:playground
+npm run verify
+npx --no-install playwright install chromium
+npm run test:browser
 ```
 
-Verification performed on 2026-10-01:
+The [production foundation record](production-foundation.md) supersedes the
+2026-10-01 browser-access limitation. Actual local Chromium now exercises both
+desktop and phone-size viewports with real module Workers, CSP, Blob image
+decoding and SVG downloads. All four samples download byte-identically to the
+core renderer. Errors, stale previews, capacity limits, warnings, recovery,
+zoom/Fit and keyboard Tab exit are covered. Screenshots:
+[desktop](images/playground-desktop.png), [phone](images/playground-phone.png).
 
-- Existing 109 core/CLI regression tests remain passing
-- 16 added checks (125 total) cover all samples, byte-identical renderer output,
-  capacity errors, syntax and line diagnostics, title escaping, XML-invalid
-  titles, source limits, filename/line utilities, and built browser-module parity
-- DOM integration tests cover repeated sample switching, valid→invalid→valid
-  recovery, line selection, warnings, out-of-order worker results and image loads,
-  image failure, worker failure, download Blob bytes, zoom and resize calculations
-- TypeScript strict typecheck and static build passed
-- Static review checked loopback-only serving, diagnostics inserted as text,
-  Blob image isolation and the absence of new network/runtime dependencies
+Core/CLI/DOM regression tests remain in `npm test`; mocked race and failure cases
+complement the browser scenarios. Browser tests caught and now guard a desktop
+preview sizing defect. No Firefox, Safari, physical mobile-device, screen-reader
+or real hardware qualification is claimed. Small diagram labels need zoom.
 
-**Visual browser QA remains blocked.** The available cloud browser refused
-`http://127.0.0.1:4173` with `net::ERR_BLOCKED_BY_CLIENT`; an auxiliary browser
-CLI also could not start. No access-control workaround was attempted. There is
-no verified UI screenshot. jsdom is a unit-level DOM environment, not a visual
-browser: real responsive rendering, CSP behavior, actual module-worker execution,
-SVG image decoding and browser download interaction still need a real-browser
-pass. DOM tests mock those boundaries and must not be read as proof of them.
-
-Suggested final browser pass, once an allowed local browser is available:
-
-1. Try all four samples on desktop and at 390 px phone width; inspect code,
-   diagram, labels, warnings and page overflow
-2. Enter an unknown pin, jump to its line, then fix it; confirm stale-preview
-   labeling and disabled download during errors/updates
-3. Switch samples rapidly and type while a mixed preview is generating; the
-   latest source must win
-4. Zoom in/out, scroll the diagram, fit, then resize the browser
-5. Download each current SVG and open it; compare bytes to the CLI render
-6. Check console errors, keyboard focus/Tab order and screen-reader announcements
-
-The validation above was completed before source publication. The user later
-approved adding this Playground to Draft PR #1. No merge or deployment is included.
+GitHub Actions runs these checks on PRs and main and retains browser evidence for
+seven days. Consult the PR's actual checks for hosted results. The application
+has not been deployed.
