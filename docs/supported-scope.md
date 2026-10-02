@@ -14,7 +14,8 @@ This is the current implementation contract, not the full future roadmap.
   serializes SVG. Routing failure can therefore prevent render after check passes.
 - Errors exit 1 with stable `E_*` codes and a line when available. Render validates
   before writing and preserves an existing output on validation failure; that
-  existing file may be stale. Reversed LED input is preserved with `W_LED_POLARITY`.
+  existing file may be stale. The original LED families preserve reversed LED
+  input with `W_LED_POLARITY`; the diode family rejects reversed polarity.
 - No formatter, JSON diagnostics CLI, Markdown plugin, PNG export or Wokwi export.
 
 ## Circuit families
@@ -24,11 +25,16 @@ This is the current implementation contract, not the full future roadmap.
 | Single LED | One Uno R3, 220Ω resistor and `led-5mm-red`, three two-terminal nets forming D12/D13 → resistor → LED → GND1 | Either resistor direction and explicitly reversed LED supported |
 | Multi LED | 3–6 separate resistor/LED branches on D13, D12, … with common GND1 | No 2-branch case; 7–12 semantically supported branches fail `E_PLACEMENT_CAPACITY`; larger counts fail `E_UNSUPPORTED_CIRCUIT` |
 | Mixed | One Uno, LED + 220Ω resistor, DHT22 + 10kΩ pull-up, button + 10kΩ pull-down, 10kΩ trimmer divider with wiper on A0 | Exactly this circuit family; three distinct digital roles may use D2–D13. Equivalent button pair endpoints and resistor directions supported |
+| Diode LED | D12/D13 → 220Ω resistor → 1N4148 A/K → LED A/K → GND1, optionally a non-polar 100nF C315C104 between 5V/GND1 | Exactly one of each series part and at most one capacitor; resistor/capacitor terminal swaps accepted, reversed diode/LED rejected |
 
 The exact mixed example and its mechanical assumptions are documented in
 [mixed-parts-preview.md](mixed-parts-preview.md). Recognized part identifiers are
 `arduino-uno-r3`, `resistor`, `led-5mm-red`, `pushbutton-b3f1000-formed`,
-`potentiometer-3296w`, and `dht22-bare`. These are not a general component library.
+`potentiometer-3296w`, `dht22-bare`, `diode-1n4148`, and
+`capacitor-c315c104`. These are not a general component library. The capacitor
+requires `[value=100nF]`; diode pins are `A`/`K`, capacitor pins `1`/`2`.
+The [component expansion record](component-expansion.md) specifies the concrete
+models, source dimensions, lead-forming assumption and measured limits.
 Unknown pins are rejected separately from valid pins in unsupported topologies.
 Uno ground socket identity is preserved; GND2/GND3 are not silently substituted.
 
@@ -36,7 +42,7 @@ Uno ground socket identity is preserved; GND2/GND3 are not silently substituted.
 
 The automatically added breadboard has 30 rows, A–E and F–J isolated strips, an
 isolated center gap and no power rails. A lead or jumper occupies each hole at
-most once. Resistors, LEDs and potentiometer internals are not ideal conductor
+most once. Resistors, LEDs, diodes, capacitors and potentiometer internals are not ideal conductor
 unions. The button is statically open between its two permanent contact pairs.
 All DHT22 pins are placed, including its reserved isolated NC pin.
 
@@ -54,7 +60,8 @@ new general router is present. Capacity is an algorithm/footprint limit, not a
 claim about the absolute capacity of every real breadboard.
 
 The button assumes formed leads; native lead pitch does not exactly fit the
-breadboard grid. DHT22 enclosure dimensions, under-body jumper clearance and
+breadboard grid. The 1N4148 assumes leads formed to a 10.16mm span; the named
+KEMET capacitor has a straight 2.54mm pitch. DHT22 enclosure dimensions, under-body jumper clearance and
 actual assembly remain unverified. No voltage/current/thermal analysis, circuit
 simulation, firmware execution, physical hardware test or beginner study is
 included. Browser tests establish UI behavior, not assembly safety or usability.

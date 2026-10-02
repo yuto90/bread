@@ -69,7 +69,7 @@ test('Playground DOM: samples, stale-result guard, errors, warnings, download, z
     download.click();
     assert.equal(clickedDownload.name, 'arduino-led.svg');
     assert.equal(await blobs.get(clickedDownload.href).text(), await currentBlob.text());
-    for (const id of ['three-leds', '6-leds', 'temperature-alarm']) {
+    for (const id of ['three-leds', '6-leds', 'diode-led', 'diode-decoupling', 'temperature-alarm']) {
       sample(id).click(); await wait(10); worker.complete(requests.at(-1));
       assert.equal(source.value, example(id)); assert.equal(sample(id).getAttribute('aria-pressed'), 'true');
       assert.equal(status.dataset.state, 'valid');

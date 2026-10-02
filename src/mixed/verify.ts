@@ -24,10 +24,13 @@ export function physicalMixed(c:Resolved,p:Placement):Netlist{
  }
  const boxes=parts.map(part=>envelope(part,p));
  for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++)if(overlaps(boxes[i],boxes[j]))fail('E_PLACEMENT_FAILED','Component envelopes overlap');
- const sensor=parts.find(p=>p.type==='dht22-bare')!,nc=`pin:${sensor.id}.3`,ncHole=p.leads[`${sensor.id}.3`];
- if(p.jumpers.some(j=>holeGroup(j.hole)===holeGroup(ncHole))||(p.links??[]).some(l=>[l.fromHole,l.toHole].some(h=>holeGroup(h)===holeGroup(ncHole))))fail('E_NC_CONNECTED','NC strip has a jumper');
+ const sensors=parts.filter(part=>part.type==='dht22-bare');
+ for(const sensor of sensors){
+  const ncHole=p.leads[`${sensor.id}.3`];
+  if(p.jumpers.some(j=>holeGroup(j.hole)===holeGroup(ncHole))||(p.links??[]).some(l=>[l.fromHole,l.toHole].some(h=>holeGroup(h)===holeGroup(ncHole))))fail('E_NC_CONNECTED','NC strip has a jumper');
+ }
  const all=[...terminals(c),...Object.keys(p.leads),...p.jumpers.map(j=>j.pin)];
  const actual=uf.groups(all.map(t=>`pin:${t}`));
- if(actual.find(n=>n.includes(nc))!.length!==1)fail('E_NC_CONNECTED','NC is not isolated');
+ for(const sensor of sensors)if(actual.find(n=>n.includes(`pin:${sensor.id}.3`))!.length!==1)fail('E_NC_CONNECTED','NC is not isolated');
  return actual.map(n=>n.map(t=>t.slice(4)));
 }

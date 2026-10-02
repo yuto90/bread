@@ -2,6 +2,9 @@ import type { Placement, Point, Resolved } from "../model.ts";
 import { holePoint } from "../breadboard/index.ts";
 import { unoPins } from "../../parts/arduino-uno-r3/index.ts";
 import { mixedPins } from "./parts.ts";
+import { diode } from '../../parts/diode-1n4148/index.ts';
+import { capacitor } from '../../parts/capacitor-c315c104/index.ts';
+const drawingUnitsPerMm=24/2.54;
 
 export const boardPoint = (hole: string): Point => {
   const p = holePoint(hole);
@@ -48,6 +51,14 @@ export function routingBodies(c: Resolved, p: Placement): Body[] {
       if (part.type === "resistor") {
         const y = (a.y + last.y) / 2;
         box = { left: a.x - 10, right: a.x + 10, top: y - 28, bottom: y + 28 };
+      } else if (part.type === diode.type || part.type === capacitor.type) {
+        const mid=(a.y+last.y)/2;
+        const halfX=(part.type===diode.type?diode.bodyDiameterMm:capacitor.bodyThicknessMm)*drawingUnitsPerMm/2;
+        const halfY=(part.type===diode.type?diode.bodyLengthMm:capacitor.bodyLengthMm)*drawingUnitsPerMm/2;
+        // Outward 0.001-unit rounding encloses Chromium's float32 SVG bounds.
+        // Keep the full six-unit clearance even at fractional package sizes.
+        box={left:Math.floor((a.x-halfX)*1000)/1000,right:Math.ceil((a.x+halfX)*1000)/1000,
+          top:Math.floor((mid-halfY)*1000)/1000,bottom:Math.ceil((mid+halfY)*1000)/1000};
       } else if (part.type === "led-5mm-red") {
         const y = last.y + 55;
         box = { left: a.x - 18, right: a.x + 18, top: y - 18, bottom: y + 23 };
