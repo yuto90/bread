@@ -2,6 +2,7 @@ import { readdir, readFile, mkdir, writeFile, copyFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { stripTypeScriptTypes } from 'node:module';
+import { buildDocs } from './build-docs.ts';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 export async function buildPlayground(destination = join(root, 'dist/playground')): Promise<string> {
@@ -33,6 +34,7 @@ export async function buildPlayground(destination = join(root, 'dist/playground'
     id, filename: `${id}.bread`, source: await readFile(join(root, 'examples', `${id}.bread`), 'utf8')
   })));
   await writeFile(join(output, 'samples.json'), JSON.stringify(samples, null, 2) + '\n');
+  await buildDocs(output);
   return output;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

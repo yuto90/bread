@@ -21,6 +21,8 @@
     "playwright.config.ts",
     "e2e/**/*.ts",
     "scripts/routing-corpus.ts",
-    "scripts/measure-routing.ts"
+    "scripts/measure-routing.ts",
+    "scripts/build-docs.ts",
+    "docs-site/**/*.ts"
   ]
 }

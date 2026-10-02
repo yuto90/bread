@@ -33,3 +33,13 @@ maintainer's approval.
 Report bugs with a minimal `.bread` file, expected behavior, actual error/output,
 Node/browser versions and reproduction steps. Remove credentials and unrelated
 private information. Do not post confidential inputs in public issues.
+
+For UI copy, update `playground/i18n.ts` and `playground/i18n-static.ts` together
+with meaningful locale tests. Insert diagnostic details with `textContent`.
+Keep DSL identifiers, error codes and renderer bytes independent of UI language.
+
+Documentation content is paired in `docs-site/content.ts`. Keep the English and
+Japanese slug/section structures aligned. The build reads exact sample sources
+and generates attributed SVGs through the core renderer. `tests/docs.test.mjs`
+checks local links, fragments, preview parity and the search index. Browser tests
+exercise search, language navigation and links back to the actual samples.
