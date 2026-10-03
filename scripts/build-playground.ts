@@ -23,7 +23,7 @@ export async function buildPlayground(destination = join(root, 'dist/playground'
       await writeFile(target, code);
     }
   }
-  for (const file of ['index.html', 'style.css', 'icon.svg']) {
+  for (const file of ['index.html', 'style.css', 'icon.svg', '_headers']) {
     await copyFile(join(root, 'playground', file), join(output, file));
   }
   await mkdir(join(output, 'LICENSES'), { recursive: true });

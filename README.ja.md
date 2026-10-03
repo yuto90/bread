@@ -56,3 +56,5 @@ npm run build
 `dist/playground/` に Playground と `/docs/` を含む静的ファイルを生成します。
 HTTP で配信してください。ビルドだけでは公開されません。npm パッケージは未公開です。
 参加方法は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
+
+[Cloudflare Pages 自動公開と管理者による初期設定](docs/cloudflare-pages.md)

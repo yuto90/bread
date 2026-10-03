@@ -126,3 +126,5 @@ this foundation change. The [original requirements](docs/requirements/) preserve
 the product vision and historical experiment; they are not a promise that every
 listed feature exists. [Hardware sources](docs/hardware-sources.md) document the
 separate provenance and attribution of derived geometry and diagrams.
+
+[Cloudflare Pages deployment and required owner setup](docs/cloudflare-pages.md)
