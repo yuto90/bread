@@ -2,6 +2,10 @@
 
 English · [日本語](README.ja.md)
 
+[Open the public Playground](https://bread-playground.pages.dev/) ·
+[English docs](https://bread-playground.pages.dev/docs/) ·
+[日本語ドキュメント](https://bread-playground.pages.dev/docs/ja/)
+
 **Describe connections. Get an automatically placed breadboard wiring diagram.**
 
 Bread turns a small `.bread` text file into a standalone SVG with realistic
@@ -14,7 +18,7 @@ Bread is in early product development. The checked circuit families below work;
 arbitrary circuits, certified mechanical fit and electrical behavior are not
 supported claims. Original software is **MIT-licensed**; Arduino-derived geometry and generated
 illustrations are **CC BY-SA 4.0**. See the [file-level license scope](LICENSES/README.md)
-and [output obligations](docs/licensing-review.md). No package release is published.
+and [output obligations](docs/licensing-review.md). No npm package is published. See the [early-preview release notes](docs/releases/v0.1.0-preview.1.md).
 
 ![Bread wiring output](output/blink.svg)
 
@@ -42,7 +46,7 @@ guidance retains the original compiler detail.
 After starting the server, read the [English guides](http://127.0.0.1:4173/docs/)
 or [日本語ガイド](http://127.0.0.1:4173/docs/ja/): quickstart, syntax, parts,
 source/preview examples, diagnostics, limits, licensing and contributing. These
-are **local addresses**, not a newly published site. The same static build keeps
+are **local development addresses**; the public guides are linked above. The same static build keeps
 the Playground at `/` and docs at `/docs/`.
 
 ```bread
@@ -121,8 +125,9 @@ without reusing expected net labels or logical connection edges.
 
 Remaining engineering work includes routing/label readability and mechanical
 clearance, followed by hardware-fit and beginner-usability validation.
-Simulation, an AI service, package publication and public hosting are outside
-this foundation change. The [original requirements](docs/requirements/) preserve
+Simulation, an AI service and npm package publication remain outside the current
+scope. The public Playground and guides are hosted on Cloudflare Pages; the existing
+GitHub Actions workflow deploys verified `main` builds. The [original requirements](docs/requirements/) preserve
 the product vision and historical experiment; they are not a promise that every
 listed feature exists. [Hardware sources](docs/hardware-sources.md) document the
 separate provenance and attribution of derived geometry and diagrams.

@@ -27,8 +27,14 @@ export const staticCopy = [
   {
     selector: "#docs-link",
     attribute: null,
-    en: "Docs",
-    ja: "ドキュメント",
+    en: "Docs ↗",
+    ja: "ドキュメント ↗",
+  },
+  {
+    selector: "#docs-link",
+    attribute: "aria-label",
+    en: "Docs (opens in a new tab)",
+    ja: "ドキュメント（新しいタブで開く）",
   },
   {
     selector: ".eyebrow",

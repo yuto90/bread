@@ -90,9 +90,12 @@ test("Japanese browser locale, all six exports, error language changes, persiste
       path: info.outputPath("playground-ja.png"),
       fullPage: true,
     });
+    const openingDocs = context.waitForEvent("page");
     await page.locator("#docs-link").click();
-    await expect(page).toHaveURL(/\/docs\/ja\//);
-    await expect(page.locator("html")).toHaveAttribute("lang", "ja");
+    const docs = await openingDocs;
+    await expect(docs).toHaveURL(/\/docs\/ja\//);
+    await expect(docs.locator("html")).toHaveAttribute("lang", "ja");
+    await docs.close();
     expect(errors).toEqual([]);
   } finally {
     await context.close();
