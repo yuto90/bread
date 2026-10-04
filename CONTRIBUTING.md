@@ -25,8 +25,12 @@ Never infer physical correctness from the expected logical nets.
 
 CI uses read-only repository permissions and SHA-pinned actions. It installs the
 lockfile without lifecycle scripts, runs type/core/DOM/build checks and real
-Chromium tests, and uploads browser evidence for seven days. It neither deploys
-nor publishes. Repository branch protection is a separate maintainer setting;
+Chromium tests, and uploads browser evidence for seven days. Pull requests only
+run verification. Successful `main` push/manual runs pass their verified static
+assets to the existing Cloudflare Pages production deployment job, which skips
+superseded commits. This workflow does not publish npm packages or GitHub Releases.
+See [deployment details](docs/cloudflare-pages.md).
+Repository branch protection is a separate maintainer setting;
 adding CI alone does not require checks or reviews. Further PR merges need the
 maintainer's approval.
 

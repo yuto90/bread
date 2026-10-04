@@ -2,6 +2,10 @@
 
 [English](README.md) · 日本語
 
+[公開 Playground](https://bread-playground.pages.dev/?lang=ja) ·
+[日本語ドキュメント](https://bread-playground.pages.dev/docs/ja/) ·
+[English docs](https://bread-playground.pages.dev/docs/)
+
 **接続を書くと、自動配置されたブレッドボード配線図が得られます。**
 
 小さな `.bread` ファイルに部品と接続を記述すると、Bread が穴を割り当て、
@@ -26,7 +30,7 @@ npm run playground
 [日本語ドキュメント](http://127.0.0.1:4173/docs/ja/)と
 [English docs](http://127.0.0.1:4173/docs/)には、導入、DSL、部品、実ソースと
 図の比較、エラー、制限、ライセンス、開発参加の9ガイドがあります。
-これらはサーバーを起動した PC の**ローカルアドレス**で、新規公開 URL ではありません。
+これらはサーバーを起動した PC の**開発用ローカルアドレス**です。公開版は冒頭のリンクから使えます。
 
 言語の初期値は対応するブラウザー言語（未対応時は英語）です。選択した言語だけを
 ブラウザーに保存します。ソースはタブ内のメモリーだけで扱い、再読み込みや
@@ -54,7 +58,9 @@ npm run build
 ```
 
 `dist/playground/` に Playground と `/docs/` を含む静的ファイルを生成します。
-HTTP で配信してください。ビルドだけでは公開されません。npm パッケージは未公開です。
+HTTP で配信してください。ローカルのビルドだけでは公開されません。既存の GitHub Actions は
+`main` の検証済み成果物を既存 Cloudflare Pages に自動公開します。npm パッケージは未公開です。
+[early-preview リリースノート](docs/releases/v0.1.0-preview.1.md)も参照してください。
 参加方法は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
 [Cloudflare Pages 自動公開と管理者による初期設定](docs/cloudflare-pages.md)
